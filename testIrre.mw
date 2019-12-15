@@ -89,68 +89,68 @@
 <Task/><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L1" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal">5. Test de irreducibilidad en Fq[x]</Text-field>
+<Text-field style="Text" layout="Normal">5. Test de irreducibilidad de un polinomio en Fq[x]</Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L2" drawlabel="true">
-<Input>
-<Text-field style="Text" layout="Normal"></Text-field>
-</Input>
-</Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L3" drawlabel="true">
-<Input>
-<Text-field style="Text" layout="Normal">pag 423, algorithm 14.36</Text-field>
-</Input>
-</Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L4" drawlabel="true">
-<Input>
-<Text-field style="Text" layout="Normal"></Text-field>
-</Input>
-</Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L5" drawlabel="true">
-<Input>
-<Text-field style="Text" layout="Normal"></Text-field>
-</Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="500" pixel-height="745" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">with(Bits):
-
-#Calcula a^n
-algth4_8 := proc(a::polynom, n::integer)
-	local nbinary, k, b, i;
-	nbinary := Split(n);
-	k := nops(nbinary);
-	b[k] := a;
-	i := k-1;
-	while i &gt;= 0 do
-		if n[i] = 1 then b[i] = b[i+1]^2*a;
-		else b[i] := b[i+1]^2; 
-		end if;
-		i := i-1;
-	end do;
-	return b[0]
-end proc:
-
-#Calcula g(h) rem f
-algth12_3 := proc(f::polynom, g::polynom, h::polynom)
-	local m, n, mMenos, i;
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="664" pixel-height="688" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">testIrre := proc(f::polynom, q::integer)
+	local aux, n, p, t, i;
 	n := degree(f);
-	m := ceil(n^(1/2));
-	mMenos := degree(g);
-	i := 2;
-	while i &lt;= m do
-		rem(algth4_8(h,i), f, x);
+	if n = 0 or n = 1 then return 'irreducible' end if; 
+	#Prime factors nos devuelve en primer lugar el menor
+	p := primeFactors(q)[1];	
+	#Veamos si f divide a x^q^n -x
+	#Powmod calcula x^(q^n) mod f
+	aux := Powmod(x, q^n, f, x) mod p;
+     aux := Rem(aux-x, f, x) mod p;
+	if a &lt;&gt; 0 then return 'reducible' end if;
+	#Veamos si gcd(x^q^(n/t) -x, f) = 1 para todo t divisor primo de n
+	t := primefactors(n);	
+	for i from 1 to numelems(t) do
+		if gcd(x^(q^(n/t[i])) -x, f) mod p &lt;&gt; 1 then return 'reducible' end if;
 	end do;
-	#He crasheado aqu\303\255
 
-testIrre := proc(f::polynom, q::integer)
-	local aux;
-	#Calculamos x^q rem f
-	aux := rem(algth4_8(x,q), f, x);
-	#Calculamos x^q^n rem f
-	
-	
+	return 'irreducible'
 end proc:
-</EC-CodeEditor></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L8" drawlabel="true">
+
+print('________________EJEMPLOS________________');
+p := 2: q:= 16:
+print(`En Z16: 2`);
+testIrre(2, q);
+print(`En Z16: x`);
+testIrre(x, q);
+print(`En Z16: (x+1)^2`);
+f := (x+1)^2:
+testIrre(f, q);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5aMTY6fjJHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5aMTY6fnhHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STBFbn5aMTY6fih4KzEpXjJHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpyZWR1Y2libGVHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STBFbn5aMTY6fnheMn4rfjFHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpyZWR1Y2libGVHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20(in%20mod%2FFactors%2FPrime)%201st%20argument%20must%20be%20a%20polynomial%20over%20a%20finite%20field" hyperlink="true"><Font style="HyperlinkError">Error, (in mod/Factors/Prime) 1st argument must be a polynomial over a finite field</Font></Hyperlink></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L4" drawlabel="true">
 <Input>
 <Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
 </Input>
