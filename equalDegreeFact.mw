@@ -83,83 +83,62 @@
 <Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
 <Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
 </Styles>
-<Metadata-table>
-    <Metadata-category name="&lt;default&gt;"/>
-    <Metadata-tag id="0" category="&lt;default&gt;" name="Document Properties">
-        <Metadata-attribute name="Palabras claves" value="&lt;default&gt;"/>
-        <Metadata-attribute name="Autor" value="&lt;default&gt;"/>
-        <Metadata-attribute name="Item List" value="true"/>
-        <Metadata-attribute name="T\303\255tulo" value="&lt;default&gt;"/>
-        <Metadata-attribute name="Asunto " value="&lt;default&gt;"/>
-    </Metadata-tag>
-</Metadata-table>
 <Task-table>
     <Task-category name="&lt;default&gt;"/>
 </Task-table>
-<Task>
-<TaskVariable name="EJEMPLOS" description=""/>
-</Task><Presentation-Block>
+<Task/><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L1" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal">5. Test de irreducibilidad de un polinomio en Fq[x]</Text-field>
+<Text-field style="Text" layout="Normal">7.2 Equal Degree Factorization</Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L2" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="664" pixel-height="688" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">testIrre := proc(f::polynom, q::integer)
-	local aux, n, p, t, i;
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L2" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="846" pixel-height="673" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">equalDegreeFactAux := proc(f::polynom, p::integer, k::integer, d::integer)
+	local n, a, g1, b, g2, q;
 	n := degree(f);
-	if n = 0 or n = 1 then return 'irreducible' end if; 
-	#Prime factors nos devuelve en primer lugar el menor
-	p := primeFactors(q)[1];	
-	#Veamos si f divide a x^q^n -x
-	#Powmod calcula x^(q^n) mod f
-	aux := Powmod(x, q^n, f, x) mod p;
-     aux := Rem(aux-x, f, x) mod p;
-	if a &lt;&gt; 0 then return 'reducible' end if;
-	#Veamos si gcd(x^q^(n/t) -x, f) = 1 para todo t divisor primo de n
-	t := primefactors(n);	
-	for i from 1 to numelems(t) do
-		if gcd(x^(q^(n/t[i])) -x, f) mod p &lt;&gt; 1 then return 'reducible' end if;
-	end do;
-
-	return 'irreducible'
+	q := p^k;
+	
+     a := Randpoly(rand(n)(), x) mod p;
+	if degree(a) &lt; 1 then return -1 end if;
+	
+	g1 := Gcd(a, f) mod p;
+	if g1 &lt;&gt; 1 then return g1 end if;
+	
+	b := Powmod(a, (q^d - 1)/2, f, x) mod p;
+	
+	g2 := Gcd(b-1, f) mod p;
+	if g2 &lt;&gt; 1 and g2 &lt;&gt; f then return g2
+	else return -1 end if;
 end proc:
 
-print('________________EJEMPLOS________________');
-p := 2: q:= 16:
-print(`En Z16: 2`);
-testIrre(2, q);
-print(`En Z16: x`);
-testIrre(x, q);
-print(`En Z16: (x+1)^2`);
-f := (x+1)^2:
-testIrre(f, q);
-print(`En Z2: x^2+x+1`);</EC-CodeEditor>
+equalDegreeFact := proc(f::polynom, p::integer, k::integer, d::integer)
+	local g, result;
+	if degree(f) &lt;= d then return [f] end if;
+
+	g := equalDegreeFactAux(f, p, k, d);
+	while g = -1 do
+		g := equalDegreeFactAux(f, p, k, d);
+	end do;
+
+	result := [op(equalDegreeFact(g, p, k, d)), op(equalDegreeFact(quo(f, g, x) mod p, p, k, d))];
+	
+	return result
+end proc:
+
+equalDegreeFact((x+3)*(x-1), 7, 1, 1 );
+equalDegreeFact((x+5)*(x-2), 3, 1, 1 );</EC-CodeEditor>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiM0YnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiZGMEY6LUZVNiRRIjZGJ0Y+Rj4vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkJGPkY+LyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn">NyQsJkkieEc2IiIiIiIiJEYmLCZGJEYmIiInRiY=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5aMTY6fjJHNiI=</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5aMTY6fnhHNiI=</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STBFbn5aMTY6fih4KzEpXjJHNiI=</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpyZWR1Y2libGVHNiI=</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SS9Fbn5aMjp+eF4yK3grMUc2Ig==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiMkYnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiZGMEY6LUZVNiRRIjFGJ0Y+Rj4vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkJGPkY+LyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn">NyQsJkkieEc2IiIiIiIiI0YmLCZGJEYmRiZGJg==</Equation></Text-field>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L4" drawlabel="true">
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L6" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Worksheet>

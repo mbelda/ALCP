@@ -96,68 +96,41 @@
 <Task-table>
     <Task-category name="&lt;default&gt;"/>
 </Task-table>
-<Task>
-<TaskVariable name="EJEMPLOS" description=""/>
-</Task><Presentation-Block>
+<Task/><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L1" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal">5. Test de irreducibilidad de un polinomio en Fq[x]</Text-field>
+<Text-field style="Text" layout="Normal">7.1 Distinct Degree Factorization</Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L2" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="664" pixel-height="688" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">testIrre := proc(f::polynom, q::integer)
-	local aux, n, p, t, i;
-	n := degree(f);
-	if n = 0 or n = 1 then return 'irreducible' end if; 
-	#Prime factors nos devuelve en primer lugar el menor
-	p := primeFactors(q)[1];	
-	#Veamos si f divide a x^q^n -x
-	#Powmod calcula x^(q^n) mod f
-	aux := Powmod(x, q^n, f, x) mod p;
-     aux := Rem(aux-x, f, x) mod p;
-	if a &lt;&gt; 0 then return 'reducible' end if;
-	#Veamos si gcd(x^q^(n/t) -x, f) = 1 para todo t divisor primo de n
-	t := primefactors(n);	
-	for i from 1 to numelems(t) do
-		if gcd(x^(q^(n/t[i])) -x, f) mod p &lt;&gt; 1 then return 'reducible' end if;
-	end do;
-
-	return 'irreducible'
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L2" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L3" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="584" pixel-height="574" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">distDegreeFact := proc(pol::polynom, p::integer, expo::integer)
+local result, h, i, g, f, q;
+    q := p^expo;
+    f := pol;
+    result := [];
+    h := x;
+    i := 1;
+    while f &lt;&gt; 1 do
+        h := powmod(h, q, f, x) mod p;
+        g := Gcd(h-x, f) mod p;
+        if g &lt;&gt; 1 then         
+            f := quo(f, g, x) mod p;
+            h := rem(h, f, x) mod p;
+            result := [op(result), g];
+        end if;
+        i := i+1;
+    end do;
+    return result
 end proc:
 
-print('________________EJEMPLOS________________');
-p := 2: q:= 16:
-print(`En Z16: 2`);
-testIrre(2, q);
-print(`En Z16: x`);
-testIrre(x, q);
-print(`En Z16: (x+1)^2`);
-f := (x+1)^2:
-testIrre(f, q);
-print(`En Z2: x^2+x+1`);</EC-CodeEditor>
+distDegreeFact(x^4+3*x^3+4*x^2+3, 5, 4);</EC-CodeEditor>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5aMTY6fjJHNiI=</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5aMTY6fnhHNiI=</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STBFbn5aMTY6fih4KzEpXjJHNiI=</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpyZWR1Y2libGVHNiI=</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SS9Fbn5aMjp+eF4yK3grMUc2Ig==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiMUYnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiotRiw2JC1JJW1zdXBHRiQ2JUYwLUZVNiRRIjNGJ0Y+LyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y+RjotRiw2Ji1GVTYkUSIyRidGPi1GOzYtUTEmSW52aXNpYmxlVGltZXM7RidGPkZARkNGRUZHRklGS0ZNRmZuL0ZTRmduLUZfbzYlRjBGaW9GZG9GPkY6LUYsNiZGaW9GXHBGMEY+RjpGYW9GPi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGQkY+Rj4vJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRic=">NyQsJkkieEc2IiIiIkYmRiYsKiokRiQiIiRGJiokRiQiIiNGK0YkRitGKUYm</Equation></Text-field>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L4" drawlabel="true">
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L5" drawlabel="true">
 <Input>
 <Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
 </Input>
