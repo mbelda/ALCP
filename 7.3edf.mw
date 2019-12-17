@@ -88,25 +88,27 @@
     <Metadata-tag id="0" category="&lt;default&gt;" name="Document Properties">
         <Metadata-attribute name="Palabras claves" value="&lt;default&gt;"/>
         <Metadata-attribute name="Autor" value="&lt;default&gt;"/>
-        <Metadata-attribute name="Item List" value="true"/>
         <Metadata-attribute name="T\303\255tulo" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Item List" value="true"/>
         <Metadata-attribute name="Asunto " value="&lt;default&gt;"/>
     </Metadata-tag>
 </Metadata-table>
 <Task-table>
     <Task-category name="&lt;default&gt;"/>
 </Task-table>
-<Task/><Presentation-Block>
+<Task>
+<TaskVariable name="EJEMPLOS" description=""/>
+</Task><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L1" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal">7.2 Equal Degree Factorization</Text-field>
+<Text-field style="Text" layout="Normal">7.3 Equal Degree Factorization</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L2" drawlabel="true">
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L3" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="846" pixel-height="673" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">equalDegreeFactAux := proc(f::polynom, p::integer, k::integer, d::integer)
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L3" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="846" pixel-height="673" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
 	local n, a, g1, b, g2, q;
 	n := degree(f);
 	q := p^k;
@@ -124,25 +126,25 @@
 	else return -1 end if;
 end proc:
 
-equalDegreeFact := proc(f::polynom, p::integer, k::integer, d::integer)
+edf := proc(f::polynom, p::integer, k::integer, d::integer)
 	local g, result;
 	if degree(f) &lt;= d then return [f] end if;
 
-	g := equalDegreeFactAux(f, p, k, d);
+	g := edfAux(f, p, k, d);
 	while g = -1 do
-		g := equalDegreeFactAux(f, p, k, d);
+		g := edfAux(f, p, k, d);
 	end do;
 
-	result := [op(equalDegreeFact(g, p, k, d)), op(equalDegreeFact(quo(f, g, x) mod p, p, k, d))];
+	result := [op(edf(g, p, k, d)), op(edf(quo(f, g, x) mod p, p, k, d))];
 	
 	return result
 end proc:
 
 print('________________EJEMPLOS________________');
 print(`En Z7: (x+3)*(x-1)`);
-equalDegreeFact((x+3)*(x-1), 7, 1, 1 );
+edf((x+3)*(x-1), 7, 1, 1 );
 print(`En Z3: (x+5)*(x-2)`);
-equalDegreeFact((x+5)*(x-2), 3, 1, 1 );</EC-CodeEditor>
+edf((x+5)*(x-2), 3, 1, 1 );</EC-CodeEditor>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
@@ -160,7 +162,7 @@ equalDegreeFact((x+5)*(x-2), 3, 1, 1 );</EC-CodeEditor>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L6" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Worksheet>

@@ -96,39 +96,110 @@
 <Task-table>
     <Task-category name="&lt;default&gt;"/>
 </Task-table>
-<Task/><Presentation-Block>
+<Task>
+<TaskVariable name="EJEMPLOS" description=""/>
+</Task><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L1" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal">7.1 Distinct Degree Factorization</Text-field>
+<Text-field style="Text" layout="Normal">7. Polynomial factorization</Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L2" drawlabel="true">
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L3" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="584" pixel-height="574" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">distDegreeFact := proc(pol::polynom, p::integer, expo::integer)
-local result, h, i, g, f, q;
-    q := p^expo;
-    f := pol;
-    result := [];
-    h := x;
-    i := 1;
-    while f &lt;&gt; 1 do
-        h := powmod(h, q, f, x) mod p;
-        g := Gcd(h-x, f) mod p;
-        if g &lt;&gt; 1 then         
-            f := quo(f, g, x) mod p;
-            h := rem(h, f, x) mod p;
-            result := [op(result), g];
-        end if;
-        i := i+1;
-    end do;
-    return result
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L6" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="846" pixel-height="394" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
+	local n, a, g1, b, g2, q;
+	n := degree(f);
+	q := p^k;
+	
+     a := Randpoly(rand(n)(), x) mod p;
+	if degree(a) &lt; 1 then return -1 end if;
+	
+	g1 := Gcd(a, f) mod p;
+	if g1 &lt;&gt; 1 then return g1 end if;
+	
+	b := Powmod(a, (q^d - 1)/2, f, x) mod p;
+	
+	g2 := Gcd(b-1, f) mod p;
+	if g2 &lt;&gt; 1 and g2 &lt;&gt; f then return g2
+	else return -1 end if;
+end proc:
+
+edf := proc(f::polynom, p::integer, k::integer, d::integer)
+	local g, result;
+	if degree(f) &lt;= d then return [f] end if;
+
+	g := edfAux(f, p, k, d);
+	while g = -1 do
+		g := edfAux(f, p, k, d);
+	end do;
+
+	result := [op(edf(g, p, k, d)), op(edf(quo(f, g, x) mod p, p, k, d))];
+	
+	return result
+end proc:
+
+
+polyFact := proc(f::polynom, p::integer, expo::integer)
+	local U, h, i, q, v, facg, j, e, g;
+	q := p^expo;
+	v := f/lcoeff(f) mod p;
+	U := [];
+	h := x;
+	i := 1;
+
+	while v &lt;&gt; 1 do
+		h := Powmod(h, q, v, x) mod p;
+	   	g := Gcd(h-x, v) mod p;
+	   	if g &lt;&gt; 1 then 
+			facg := edf(g, p, expo, i);
+			for j to numelems(facg) do
+				e := 0;
+				while Rem(v, facg[j], x) mod p = 0 do
+					v := Quo(v, facg[j], x) mod p;
+					e := e+1;
+				end do;
+				U := [op(U), [facg[j],e]];
+			end do;
+	   	end if;
+	   	i := i+1;
+	end do;
+	return U
 end proc:
 
 print('________________EJEMPLOS________________');
 print(`En Z5^4: x^4 + 3x^3 + 4x^2 + 3`);
-distDegreeFact(x^4+3*x^3+4*x^2+3, 5, 4);</EC-CodeEditor>
+f := x^4+3*x^3+4*x^2+3:
+p := 5:
+polyFact(f, p, 4);
+#(`mod`(Factors(f), p))[2];
+print(`En Z7: (x+3)*(x-1)`);
+f := (x+3)*(x-1):
+p := 7:
+polyFact(f, p, 1, 1 );
+#(`mod`(Factors(f), p))[2];
+print(`En Z3: (x+5)*(x-2)`);
+f := (x+5)*(x-2):
+p := 3:
+polyFact(f, p, 1, 1 );
+#(`mod`(Factors(f), p))[2];
+</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SU1fX19fX19fX19fX19fX19fRUpFTVBMT1NfRURGX19fX19fX19fX19fX19fX0c2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aNzp+KHgrMykqKHgtMSlHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiNkYnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiZGMEY6LUZVNiRRIjNGJ0Y+Rj4vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkJGPkY+LyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn">NyQsJkkieEc2IiIiIiIiJ0YmLCZGJEYmIiIkRiY=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aMzp+KHgrNSkqKHgtMilHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiMkYnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiZGMEY6LUZVNiRRIjFGJ0Y+Rj4vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkJGPkY+LyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn">NyQsJkkieEc2IiIiIiIiI0YmLCZGJEYmRiZGJg==</Equation></Text-field>
+</Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
@@ -136,7 +207,19 @@ distDegreeFact(x^4+3*x^3+4*x^2+3, 5, 4);</EC-CodeEditor>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiMUYnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiotRiw2JC1JJW1zdXBHRiQ2JUYwLUZVNiRRIjNGJ0Y+LyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y+RjotRiw2Ji1GVTYkUSIyRidGPi1GOzYtUTEmSW52aXNpYmxlVGltZXM7RidGPkZARkNGRUZHRklGS0ZNRmZuL0ZTRmduLUZfbzYlRjBGaW9GZG9GPkY6LUYsNiZGaW9GXHBGMEY+RjpGYW9GPi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGQkY+Rj4vJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRic=">NyQsJkkieEc2IiIiIkYmRiYsKiokRiQiIiRGJiokRiQiIiNGK0YkRitGKUYm</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjFGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJ0ZYLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0ZGRkJGQi8lJW9wZW5HUSJbRicvJSZjbG9zZUdRIl1GJ0Zmbi1GIzYmLUYsNigtRiw2Ki1GLDYkLUklbXN1cEdGJDYlRjQtRlk2JFEiM0YnRkIvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRkJGPi1GLDYmLUZZNiRRIjJGJ0ZCLUY/Ni1RMSZJbnZpc2libGVUaW1lcztGJ0ZCRkRGR0ZJRktGTUZPRlFGam4vRldGW28tRmJwNiVGNEZccUZncEZCRj4tRiw2JkZccUZfcUY0RkJGPkZkcEZCRmZuRlhGXm9GYW9GQkZCRmNvRmZvRl5vRmFvRkJGQkZjb0Zmbw==">NyQ3JCwmSSJ4RzYiIiIiRidGJ0YnNyQsKiokRiUiIiRGJyokRiUiIiNGLUYlRi1GK0YnRic=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aNzp+KHgrMykqKHgtMSlHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjZGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJy1GWTYkUSIxRidGQi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGRkZCRkIvJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRidGZm4tRiM2Ji1GLDYoLUYsNiZGNEY+LUZZNiRRIjNGJ0ZCRkJGZm5GXm9GYW9GZG9GQkZCRmZvRmlvRmFvRmRvRkJGQkZmb0Zpbw==">NyQ3JCwmSSJ4RzYiIiIiIiInRidGJzckLCZGJUYnIiIkRidGJw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aMzp+KHgrNSkqKHgtMilHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjFGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJ0ZYLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0ZGRkJGQi8lJW9wZW5HUSJbRicvJSZjbG9zZUdRIl1GJ0Zmbi1GIzYmLUYsNigtRiw2JkY0Rj4tRlk2JFEiMkYnRkJGQkZmbkZYRl5vRmFvRkJGQkZjb0Zmb0Zeb0Zhb0ZCRkJGY29GZm8=">NyQ3JCwmSSJ4RzYiIiIiRidGJ0YnNyQsJkYlRiciIiNGJ0Yn</Equation></Text-field>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L5" drawlabel="true">
 <Input>
