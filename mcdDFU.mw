@@ -83,10 +83,22 @@
 <Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
 <Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
 </Styles>
+<Metadata-table>
+    <Metadata-category name="&lt;default&gt;"/>
+    <Metadata-tag id="0" category="&lt;default&gt;" name="Document Properties">
+        <Metadata-attribute name="Palabras claves" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Autor" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Item List" value="true"/>
+        <Metadata-attribute name="T\303\255tulo" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Asunto " value="&lt;default&gt;"/>
+    </Metadata-tag>
+</Metadata-table>
 <Task-table>
     <Task-category name="&lt;default&gt;"/>
 </Task-table>
-<Task/><Presentation-Block>
+<Task>
+<TaskVariable name="EJEMPLOS" description=""/>
+</Task><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L1" drawlabel="true">
 <Input>
 <Text-field style="Text" layout="Normal">3. Mcd en un DFU</Text-field>
@@ -96,7 +108,7 @@
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="896" pixel-height="935" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">#mcd en Z DFU
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L6" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="934" pixel-height="532" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">#mcd en Z DFU
 mcdDFU := proc (f::polynom, g::polynom)
 	local r, n, i, auxr;
 	r := [f, g];
@@ -108,25 +120,26 @@ mcdDFU := proc (f::polynom, g::polynom)
 		n := [op(n), degree(auxr)];
 		i := i + 1;
 	end do;
-	return normal(r[i-1])
+	return r[i-1]
 end proc:
 
 
 print('________________EJEMPLOS________________');
-print(`En Z: mcd(x^3 + 2*x^2 + x + 2, x^3 - 3*x^2 + x - 3)`);
-f := x^3 + 2*x^2 + x + 2:
-g := x^3 - 3*x^2 + x - 3:
+print(`En Z: mcd((x^2 + 1)(x + 2), (x^2 + 1)(x - 3))`);
+f := (x^2 + 1)*(x + 2):
+g := (x^2 + 1)*(x - 3):
 mcd := mcdDFU(f, g);
 
-print(`En Z: mcd(x^4 -4, x^4 + x^2 -2)`);
-f := x^4 -4:
-g := x^4 + x^2 -2:
+print(`En Z: mcd(2x - 2, 2)`);
+f := 2*x - 2:
+g := 2:
 mcd := mcdDFU(f, g);
 
 
 #mcd en Zp DFU
 mcdDFU := proc (f::polynom, g::polynom, p::integer)
 	local r, n, i, auxr;
+	if not isprime(p) then error &quot;p no es primo&quot; end if;
 	r := [f mod p, g mod p];
 	n := [degree(f), degree(g)];
 	i := 2;
@@ -139,36 +152,52 @@ mcdDFU := proc (f::polynom, g::polynom, p::integer)
 	return normal(r[i-1])
 end proc:
 
-print(`En Z2: mcd(x^4 -4, x^4 + x^2 -2)`);
+print('________________________________________');
+print(`En Z2: mcd(x^4 - 4, x^4 + x^2 - 2)`);
 p := 2:
 f := x^4 -4:
 g := x^4 + x^2 -2:
-mcd := mcdDFU(f, g, 2);
+mcd := mcdDFU(f, g, p);
+
+print(`En Z3: mcd(x, x+2)`);
+p := 3:
+f := x:
+g := x + 2:
+mcd := mcdDFU(f, g, p);
 </EC-CodeEditor>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SVRFbn5aOn5tY2QoeF4zfit+Mip4XjJ+K354fit+Mix+eF4zfi1+Myp4XjJ+K354fi1+MylHNiI=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SU5Fbn5aOn5tY2QoKHheMn4rfjEpKHh+K34yKSx+KHheMn4rfjEpKHh+LX4zKSlHNiI=</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiMUYnRj5GPg==">LCYqJEkieEc2IiIiIyIiIkYnRic=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUBFbn5aOn5tY2QoeF40fi00LH54XjR+K354XjJ+LTIpRzYi</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STVFbn5aOn5tY2QoMnh+LX4yLH4yKUc2Ig==</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYnLUkjbW9HRiQ2LVEqJnVtaW51czA7RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y0LyUpc3RyZXRjaHlHRjQvJSpzeW1tZXRyaWNHRjQvJShsYXJnZW9wR0Y0LyUubW92YWJsZWxpbWl0c0dGNC8lJ2FjY2VudEdGNC8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRkMtRiM2JC1JJW1zdXBHRiQ2JS1JI21pR0YkNiVRInhGJy8lJ2l0YWxpY0dRJXRydWVGJy9GMFEnaXRhbGljRictSSNtbkdGJDYkUSIyRidGLy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGLy1GLDYtUSgmbWludXM7RidGL0YyRjVGN0Y5RjtGPUY/RkFGREZURi8=">LCYqJEkieEc2IiIiIyEiIiEiIyIiIg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIj</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUFFbn5aMjp+bWNkKHheNH4tNCx+eF40fit+eF4yfi0yKUc2Ig==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUNFbn5aMjp+bWNkKHheNH4tfjQsfnheNH4rfnheMn4tfjIpRzYi</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21uR0YkNiRRIjJGJy9GNlEnbm9ybWFsRicvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRjw=">KiRJInhHNiIiIiM=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aMzp+bWNkKHgsfngrMilHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIi</Equation></Text-field>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L5" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Worksheet>
