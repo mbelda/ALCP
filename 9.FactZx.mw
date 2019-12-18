@@ -83,10 +83,22 @@
 <Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
 <Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
 </Styles>
+<Metadata-table>
+    <Metadata-category name="&lt;default&gt;"/>
+    <Metadata-tag id="0" category="&lt;default&gt;" name="Document Properties">
+        <Metadata-attribute name="Palabras claves" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Autor" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Item List" value="true"/>
+        <Metadata-attribute name="T\303\255tulo" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Asunto " value="&lt;default&gt;"/>
+    </Metadata-tag>
+</Metadata-table>
 <Task-table>
     <Task-category name="&lt;default&gt;"/>
 </Task-table>
-<Task/><Presentation-Block>
+<Task>
+<TaskVariable name="EJEMPLOS" description=""/>
+</Task><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L1" drawlabel="true">
 <Input>
 <Text-field style="Text" layout="Normal"><Font encoding="UTF-8">9. Algoritmo de factorizaci\303\263n en Z[x]</Font></Text-field>
@@ -96,7 +108,7 @@
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="796" pixel-height="453" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L3" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="796" pixel-height="453" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
 	local n, a, g1, b, g2, q;
 	n := degree(f);
 	q := p^k;
@@ -167,15 +179,17 @@ auxModFact := proc(l)
 	end do;
 end proc:
 
+
 #Calcula el productorio con indices
 prodIndices := proc(l, Saux)
 	local i, g;
 	g := 1;
 	for i in Saux do
-		g = g*l;
+		g := g*l[i];
 	end do;
 	return g
 end proc:
+
 
 factZx := proc(f::polynom)
 	local n, A, b, B, p, fbar, modFact, T, s, G, fest, S, gest, hest, Saux;
@@ -205,14 +219,14 @@ factZx := proc(f::polynom)
 	fest := f;
 
 	#6 Combinaci\303\263n de factores
-	while 2*s &lt; nops(T) do
+	while 2*s &lt;= nops(T) do
 		bucle:
 		#7 Para todos los ScT con #S=s
 		S := combinat[choose](T, s);
 		for Saux in S do
 			#8 Calcular g*, h*
 			gest := b*expand(prodIndices(modFact, Saux)) mod p;
-			hest := b*expand(prodIndices(modFact, T/Saux)) mod p;
+			hest := b*expand(prodIndices(modFact, T minus Saux)) mod p;
 			#9
 			if norm(gest,1)*norm(hest,1) &lt;= evalf(B) then
 				T := T minus Saux;
@@ -239,11 +253,11 @@ factZx(6*x^4 + 5*x^3 + 15*x^2 + 5*x + 4);</EC-CodeEditor>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">PCMiIiI=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNigtRiw2Ji1JI21uR0YkNiRRIjJGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUTEmSW52aXNpYmxlVGltZXM7RidGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnL0Y3USdpdGFsaWNGJ0YyLyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y2LUY6Ni1RIitGJ0Y2Rj1GQEZCRkRGRkZIRkovRk1RLDAuMjIyMjIyMmVtRicvRlBGXm9GVEZqbi1GMzYkUSI0RidGNkY2LUY6Ni1RIixGJ0Y2Rj0vRkFGWkZCRkRGRkZIRkpGTC9GUFEsMC4zMzMzMzMzZW1GJy1GLDYoLUYsNiYtRjM2JFEiM0YnRjZGOUZRRjZGam5GVEZqbi1GMzYkUSIxRidGNkY2LyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0Y/RjZGNi8lJW9wZW5HUSJ8ZnJGJy8lJmNsb3NlR1EifGhyRic=">PCQsKCokSSJ4RzYiIiIjRidGJSIiIiIiJUYoLChGJCIiJEYlRihGKEYo</Equation></Text-field>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L6" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Worksheet>

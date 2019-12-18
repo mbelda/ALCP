@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet>
+<Version major="18" minor="0"/>
+<Label-Scheme value="2" prefix=""/>
+<View-Properties presentation="true" autoexpanding_sections="true">
+</View-Properties>
+<MapleNet-Properties elisiondigitsbefore="100" labelling="true" indentamount="4" elisiontermsthreshold="10000" ansi="false" errorbreak="1" useclientjvm="true" echo="1" imaginaryunit="I" labelwidth="20" unitattributes="&quot;fontweight&quot; = &quot;bold&quot;" contextmenusize="automatic" plotdriver="opengl" elisiondigitsafter="100" plotoutput="terminal" helpbrowser="standard" rtablesize="10" elisiontermsbefore="100" elisiondigitsthreshold="10000" typesetting="standard" plotdevice="inline" verboseproc="1" showassumed="1" quiet="false" errorcursor="false" longdelim="true" plotoptions="" elisiontermsafter="100" screenwidth="79" preplot="" prettyprint="3" displayprecision="-1" screenpixelheight="1080" warnlevel="3" screenheight="25" latexwidth="8.0" postplot="" prompt="&gt; " ShowLabels="true"/>
+<Styles>
+<Font name="Ordered List 1" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Text" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 2" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 3" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 4" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 5" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Author" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Title" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Caption Reference" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input Placeholder" background="[255,255,255]" bold="true" executable="true" family="Courier New" foreground="[200,0,200]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="true"/>
+<Font name="Maple Plot" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Code" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[255,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Line Printed Output" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text Output" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Diagnostic" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[40,120,40]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Inert Output" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[144,144,144]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Normal" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Hyperlink" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,128,128]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Maple Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Dash Item" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Math" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input" background="[255,255,255]" bold="true" executable="true" family="Courier New" foreground="[120,0,14]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Input" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkError" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[255,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Header and Footer" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="10" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Error" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[255,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Title" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 1" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Bullet Item" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 4" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="true" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Equation Label" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 3" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="true" opaque="false" readonly="false" size="14" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 2" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="16" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkWarning" background="[255,255,255]" bold="false" executable="false" family="Courier New" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Dictionary Hyperlink" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[147,0,15]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Atomic Variable" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[175,0,175]" italic="true" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Caption Text" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="List Item" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Layout name="Ordered List 1" alignment="left" bullet="numeric" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix=""/>
+<Layout name="Ordered List 2" alignment="left" bullet="alphabetic" firstindent="0" leftmargin="36" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix=""/>
+<Layout name="Ordered List 3" alignment="left" bullet="roman" firstindent="0" leftmargin="72" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix=""/>
+<Layout name="Ordered List 4" alignment="left" bullet="ALPHABETIC" firstindent="0" leftmargin="108" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix=""/>
+<Layout name="Ordered List 5" alignment="left" bullet="ROMAN" firstindent="0" leftmargin="144" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix=""/>
+<Layout name="Author" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Warning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Annotation Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Plot" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Line Printed Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Text Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="newline" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Diagnostic" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Normal" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Output" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.3" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Dash Item" alignment="left" bullet="dash" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkError" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Error" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 1" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="4" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Bullet Item" alignment="left" bullet="dot" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 4" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 3" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 2" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkWarning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="List Item" alignment="left" bullet="indent" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Pencil-style name="Pencil 5" pen-color="[255,0,0]" pen-height="5.0" pen-width="5.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 4" pen-color="[0,0,255]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 3" pen-color="[0,0,0]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 2" pen-color="[0,0,255]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 1" pen-color="[0,0,0]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Highlighter-style name="Highlighter 2" pen-color="[255,204,0]" pen-height="14.0" pen-width="14.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 1" pen-color="[255,153,255]" pen-height="12.0" pen-width="8.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 4" pen-color="[0,255,255]" pen-height="32.0" pen-width="32.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
+</Styles>
+<Metadata-table>
+    <Metadata-category name="&lt;default&gt;"/>
+    <Metadata-tag id="0" category="&lt;default&gt;" name="Document Properties">
+        <Metadata-attribute name="Palabras claves" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Autor" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Item List" value="true"/>
+        <Metadata-attribute name="T\303\255tulo" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Asunto " value="&lt;default&gt;"/>
+    </Metadata-tag>
+</Metadata-table>
+<Task-table>
+    <Task-category name="&lt;default&gt;"/>
+</Task-table>
+<Task>
+<TaskVariable name="EJEMPLOS" description=""/>
+</Task><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L38" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Title" alignment="left">1.1 Euclides</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion6" visible="true" pixel-width="656" pixel-height="301" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(GaussInt, GIrem, GInormal):
+
+#Euclides para Z
+euclides := proc (f::integer, g::integer)
+   local r0, r1, r2;
+   r0, r1 := abs(f), abs(g);
+   while r1 &lt;&gt; 0 do
+       r2 := irem(r0, r1);
+       r0 := r1;
+       r1 := r2;
+   end do;
+   return r0
+end proc:
+
+print('________________EJEMPLOS________________');
+print(`En Z: mcd(12,32)`);
+euclides(32, 12);
+print(`En Z: mcd(5,7)`);
+euclides(5, 7);
+
+#Euclides para Zp
+euclides := proc (f::integer, g::integer, p::integer)
+   local r0, r1, r2;
+   if not isprime(p) then error &quot;p no es primo&quot; end if;
+   r0, r1 := f, g;
+   while r1 &lt;&gt; 0 do
+       r2 := irem(r0, r1) mod p;
+       r0 := r1;
+       r1 := r2;
+   end do;
+   return r0
+end proc:
+
+print('________________________________________');
+print(`En Z7: mcd(-3,4)`);
+euclides(-3, 4, 7);
+print(`En Z5: mcd(2,12)`);
+euclides(2, 12, 5);
+
+
+
+#Euclides para Z[i]
+euclidesi := proc (f::complex(integer), g::complex(integer))
+   local r0, r1, r2;
+   r0, r1 := f, g;
+   while r1 &lt;&gt; 0 do
+       r2 := GIrem(r0, r1);
+       r0 := r1;
+       r1 := r2;
+   end do;
+   return GInormal(r0)
+end proc:
+
+print('________________________________________');
+print(`En Z[i]: mcd(I + 6, (I + 6)^2)`);
+euclidesi(6 + I, (6 + I)^2);
+print(`En Z[i]: mcd(3, 3I)`);
+euclidesi(3, 3*I);
+print(`En Z[i]: mcd(2, 3I)`);
+euclidesi(2, 3*I);
+
+#Euclides para Q[x]
+euclidesqx := proc (f::polynom, g::polynom)
+   local r0, r1, r2;
+   r0, r1 := f, g;
+   while r1 &lt;&gt; 0 do
+       r2 := rem(r0, r1, x);
+       if r2 &lt;&gt; 0 then r2 := r2/lcoeff(r2); end if;
+       r0 := r1;
+       r1 := r2;
+   end do;
+   return r0
+end proc:
+
+print('________________________________________');
+print(`En Q[x]: mcd(x+1, (x+1)(x-1))`);
+euclidesqx(x + 1, (x+1)*(x-1));
+print(`En Q[x]: mcd(x-3, (x+1)(x-3))`);
+euclidesqx(x-3, (x+1)*(x-3));
+print(`En Q[x]: mcd(x-1, (x+1)(x-3))`);
+euclidesqx(x-1, (x+1)*(x-3));
+
+
+#Euclides para Fp[x]
+euclidesfpx := proc (f::polynom, g::polynom, p::integer)
+   local r0, r1, r2;
+   if not isprime(p) then error &quot;p no es primo&quot; end if;
+   r0, r1 := f mod p, g mod p;
+   while r1 &lt;&gt; 0 do
+       r2 := Rem(r0, r1, x) mod p;
+       r0 := r1;
+       r1 := r2;
+   end do;
+   return r0
+end proc:
+
+print('________________________________________');
+print(`En Z7[x]: mcd(x^2 - 1, x + 1)`);
+euclidesfpx(x^2 - 1, x + 1, 7);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STFFbn5aOn5tY2QoMTIsMzIpRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIl</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SS9Fbn5aOn5tY2QoNSw3KUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STFFbn5aNzp+bWNkKC0zLDQpRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIl</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STFFbn5aNTp+bWNkKDIsMTIpRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIj</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aW2ldOn5tY2QoSX4rfjYsfihJfit+NileMilHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkjbW5HRiQ2JFEiNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi1RIitGJ0YvLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y4LyUpc3RyZXRjaHlHRjgvJSpzeW1tZXRyaWNHRjgvJShsYXJnZW9wR0Y4LyUubW92YWJsZWxpbWl0c0dGOC8lJ2FjY2VudEdGOC8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRkctRiw2JFEiSUYnRi9GLw==">XiQiIiciIiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STRFbn5aW2ldOn5tY2QoMyx+M0kpRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIk</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STRFbn5aW2ldOn5tY2QoMix+M0kpRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST5Fbn5RW3hdOn5tY2QoeCsxLH4oeCsxKSh4LTEpKUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGTC1JI21uR0YkNiRRIjFGJ0Y5Rjk=">LCZJInhHNiIiIiJGJUYl</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST5Fbn5RW3hdOn5tY2QoeC0zLH4oeCsxKSh4LTMpKUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RKCZtaW51cztGJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGTC1JI21uR0YkNiRRIjNGJ0Y5Rjk=">LCZJInhHNiIiIiIhIiRGJQ==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST5Fbn5RW3hdOn5tY2QoeC0xLH4oeCsxKSh4LTMpKUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST5Fbn5aN1t4XTp+bWNkKHheMn4tfjEsfnh+K34xKUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGTC1JI21uR0YkNiRRIjFGJ0Y5Rjk=">LCZJInhHNiIiIiJGJUYl</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L42" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Title" alignment="left"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L44" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Title" alignment="left">1.2. Euclides extendido</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion7" visible="true" pixel-width="769" pixel-height="398" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(GaussInt, GIrem, GInormal, GIquo):
+
+#Euclides para Z
+euclidesExt := proc (f::integer, g::integer)
+   local r0, r1, r2, s0, s1, s2, t0, t1, t2;
+   r0, r1 := f, g;
+   s0, s1 := 1, 0;
+   t0, t1 := 0, 1;
+   while r1 &lt;&gt; 0 do
+       r2 := irem(r0, r1);
+       s2 := s0 - s1*iquo(r0, r1);
+       t2 := t0 - t1*iquo(r0, r1);
+       r0, s0, t0 := r1, s1, t1;
+       r1, s1, t1 := r2, s2, t2;
+   end do;
+   return r0, s0, t0
+end proc:
+
+print('________________EJEMPLOS________________');
+print(`En Z: mcd(12,30)`);
+f := 12:
+g := 30:
+mcd, u, v := euclidesExt(f,g);
+evalb(mcd -u*f -v*g = 0);
+
+print(`En Z: mcd(18,6)`);
+f := 18:
+g := 6:
+mcd, u, v := euclidesExt(f,g);
+evalb(mcd -u*f -v*g = 0);
+
+#Euclides para Zp
+euclidesExtzp := proc (f::integer, g::integer, p::integer)
+   local r0, r1, r2, s0, s1, s2, t0, t1, t2;
+   if not isprime(p) then error &quot;p no es primo&quot; end if;
+   r0, r1 := f mod p, g mod p;
+   s0, s1 := 1, 0;
+   t0, t1 := 0, 1;
+   while r1 &lt;&gt; 0 do
+       r2 := irem(r0, r1) mod p;
+       s2 := s0 - s1*iquo(r0, r1);
+       t2 := t0 - t1*iquo(r0, r1);
+       r0, s0, t0 := r1, s1, t1;
+       r1, s1, t1 := r2, s2, t2;
+   end do;
+   return r0, s0, t0
+end proc:
+
+print('________________________________________');
+print(`En Z7: mcd(-3,4)`);
+f := -3:
+g := 4:
+p := 7:
+mcd, u, v := euclidesExtzp(f, g, p);
+evalb((mcd -u*f -v*g) mod p = 0);
+
+print(`En Z5: mcd(2,12)`);
+f := 2:
+g := 12:
+p := 5:
+mcd, u, v := euclidesExtzp(f, g, p);
+evalb((mcd -u*f -v*g) mod p = 0);
+
+print(`En Z5: mcd(2,3)`);
+f := 2:
+g := 3:
+p := 5:
+mcd, u, v := euclidesExtzp(f, g, p);
+evalb((mcd -u*f -v*g) mod p = 0);
+
+#Euclides para Z[i]
+euclidesiExt := proc (f::complex(integer), g::complex(integer))
+   local r0, r1, r2, s0, s1, s2, t0, t1, t2;
+   r0, r1 := f, g;
+   s0, s1 := 1, 0;
+   t0, t1 := 0, 1;
+   while r1 &lt;&gt; 0 do
+       r2 := GIrem(r0, r1);
+       s2 := s0 - s1*GIquo(r0, r1);
+       t2 := t0 - t1*GIquo(r0, r1);
+       r0, s0, t0 := r1, s1, t1;
+       r1, s1, t1 := r2, s2, t2;
+   end do;
+   return r0, s0, t0
+end proc:
+
+print('________________________________________');
+print(`En Z[i]: mcd(-7 + 11I, -12 + 11I)`);
+f := Complex(-7, 11):
+g := Complex(-12, 11):
+mcd, u, v := euclidesiExt(f,g);
+evalb(mcd -u*f -v*g = 0);
+
+print(`En Z[i]: mcd(I + 6, (I + 6)^2)`);
+f := 6 + I;
+g := (g + I)^2:
+mcd, u, v := euclidesiExt(6 + I, (6 + I)^2);
+evalb(mcd -u*f -v*g = 0);
+
+
+#Euclides para Q[x]
+euclidesExtqx := proc (f::polynom, g::polynom)
+   local r0, r1, r2, s0, s1, s2, t0, t1, t2;
+   r0, r1 := f, g;
+   s0, s1 := 1, 0;
+   t0, t1 := 0, 1;
+   while r1 &lt;&gt; 0 do
+       r2 := rem(r0, r1, x);
+       s2 := s0 - s1*quo(r0, r1, x);
+       t2 := t0 - t1*quo(r0, r1, x);
+       r0, s0, t0 := r1, s1, t1;
+       r1, s1, t1 := r2, s2, t2;
+   end do;
+   return r0, s0, t0
+end proc:
+
+print('________________________________________');
+print(`En Q[x]: mcd(x^3 + 2*x^2 - x - 2, x^3 + 4*x^2 + x - 6)`);
+f := x^3 + 2*x^2 - x - 2:
+g := x^3 + 4*x^2 + x - 6:
+mcd, u, v := euclidesExtqx(f,g);
+evalb(mcd -u*f -v*g = 0);
+
+print(`En Q[x]: mcd((2x+1)^3, 2x+1)`);
+f := (2*x+1)^3:
+g := 2*x+1:
+mcd, u, v := euclidesExtqx(f,g);
+evalb(mcd -u*f -v*g = 0);
+
+#Euclides para Fp[x]
+euclidesExtfpx := proc (f::polynom, g::polynom, p::integer)
+   local r0, r1, r2, s0, s1, s2, t0, t1, t2;
+   if not isprime(p) then error &quot;p no es primo&quot; end if;
+   r0, r1 := f, g;
+   s0, s1 := 1, 0;
+   t0, t1 := 0, 1;
+   while r1 &lt;&gt; 0 do
+       r2 := Rem(r0, r1, x) mod p;
+       s2 := s0 - s1*quo(r0, r1, x);
+       t2 := t0 - t1*quo(r0, r1, x);
+       r0, s0, t0 := r1, s1, t1;
+       r1, s1, t1 := r2, s2, t2;
+   end do;
+   return r0 mod p, s0 mod p, t0 mod p
+end proc:
+
+print('________________________________________');
+print(`En Z7[x]: mcd(x^2 - 1, x + 1)`);
+f := x^2 - 1:
+g := x + 1:
+p := 7:
+mcd, u, v := euclidesExtfpx(f,g,p);
+evalb((mcd -u*f -v*g) mod p = 0);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STFFbn5aOn5tY2QoMTIsMzApRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUkjbW5HRiQ2JFEiNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi1RIixGJ0YvLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR1EldHJ1ZUYnLyUpc3RyZXRjaHlHRjgvJSpzeW1tZXRyaWNHRjgvJShsYXJnZW9wR0Y4LyUubW92YWJsZWxpbWl0c0dGOC8lJ2FjY2VudEdGOC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYjNiUtRjM2LVEqJnVtaW51czA7RidGL0Y2L0Y6RjhGPEY+RkBGQkZEL0ZHUSwwLjIyMjIyMjJlbUYnL0ZKRlMtRiw2JFEiMkYnRi9GL0YyLUYsNiRRIjFGJ0YvLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0Y4Ri8=">NiUiIichIiMiIiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STBFbn5aOn5tY2QoMTgsNilHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUkjbW5HRiQ2JFEiNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi1RIixGJ0YvLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR1EldHJ1ZUYnLyUpc3RyZXRjaHlHRjgvJSpzeW1tZXRyaWNHRjgvJShsYXJnZW9wR0Y4LyUubW92YWJsZWxpbWl0c0dGOC8lJ2FjY2VudEdGOC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiRRIjBGJ0YvRjItRiw2JFEiMUYnRi8vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRjhGLw==">NiUiIiciIiEiIiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STFFbn5aNzp+bWNkKC0zLDQpRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUkjbW5HRiQ2JFEiNEYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi1RIixGJ0YvLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR1EldHJ1ZUYnLyUpc3RyZXRjaHlHRjgvJSpzeW1tZXRyaWNHRjgvJShsYXJnZW9wR0Y4LyUubW92YWJsZWxpbWl0c0dGOC8lJ2FjY2VudEdGOC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiRRIjBGJ0YvRjItRiw2JFEiMUYnRi8vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRjhGLw==">NiUiIiUiIiEiIiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STFFbn5aNTp+bWNkKDIsMTIpRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUkjbW5HRiQ2JFEiMkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi1RIixGJ0YvLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR1EldHJ1ZUYnLyUpc3RyZXRjaHlHRjgvJSpzeW1tZXRyaWNHRjgvJShsYXJnZW9wR0Y4LyUubW92YWJsZWxpbWl0c0dGOC8lJ2FjY2VudEdGOC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiRRIjBGJ0YvRjItRiw2JFEiMUYnRi8vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRjhGLw==">NiUiIiMiIiEiIiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STBFbn5aNTp+bWNkKDIsMylHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUkjbW5HRiQ2JFEiMUYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi1RIixGJ0YvLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR1EldHJ1ZUYnLyUpc3RyZXRjaHlHRjgvJSpzeW1tZXRyaWNHRjgvJShsYXJnZW9wR0Y4LyUubW92YWJsZWxpbWl0c0dGOC8lJ2FjY2VudEdGOC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYjNiUtRjM2LVEqJnVtaW51czA7RidGL0Y2L0Y6RjhGPEY+RkBGQkZEL0ZHUSwwLjIyMjIyMjJlbUYnL0ZKRlNGK0YvRjJGKy8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGOEYv">NiUiIiIhIiJGIw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUJFbn5aW2ldOn5tY2QoLTd+K34xMUksfi0xMn4rfjExSSlHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUYjNictSSNtb0dGJDYtUSomdW1pbnVzMDtGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjYvJSlzdHJldGNoeUdGNi8lKnN5bW1ldHJpY0dGNi8lKGxhcmdlb3BHRjYvJS5tb3ZhYmxlbGltaXRzR0Y2LyUnYWNjZW50R0Y2LyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGRS1JI21uR0YkNiRRIjJGJ0YxLUYuNi1RIitGJ0YxRjRGN0Y5RjtGPUY/RkFGQ0ZGLUZJNiRRIklGJ0YxRjEtRi42LVEiLEYnRjFGNC9GOFEldHJ1ZUYnRjlGO0Y9Rj9GQS9GRFEmMC4wZW1GJy9GR1EsMC4zMzMzMzMzZW1GJy1GIzYmRkgtRi42LVEoJm1pbnVzO0YnRjFGNEY3RjlGO0Y9Rj9GQUZDRkYtRiM2JkZILUYuNi1RMSZJbnZpc2libGVUaW1lcztGJ0YxRjRGN0Y5RjtGPUY/RkFGVy9GR0ZYRk9GMUYxRlItRiM2J0YtLUZJNiRRIjFGJ0YxRkxGam5GMS8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGNkYx">NiVeJCEiIyIiIl4kIiIjRiReJCEiIkYn</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aW2ldOn5tY2QoSX4rfjYsfihJfit+NileMilHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkjbW5HRiQ2JFEiNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi1RIitGJ0YvLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y4LyUpc3RyZXRjaHlHRjgvJSpzeW1tZXRyaWNHRjgvJShsYXJnZW9wR0Y4LyUubW92YWJsZWxpbWl0c0dGOC8lJ2FjY2VudEdGOC8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRkctRiw2JFEiSUYnRi9GLw==">XiQiIiciIiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUYjNiYtSSNtbkdGJDYkUSI2RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LVEiK0YnRjEvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjovJSlzdHJldGNoeUdGOi8lKnN5bW1ldHJpY0dGOi8lKGxhcmdlb3BHRjovJS5tb3ZhYmxlbGltaXRzR0Y6LyUnYWNjZW50R0Y6LyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGSS1GLjYkUSJJRidGMUYxLUY1Ni1RIixGJ0YxRjgvRjxRJXRydWVGJ0Y9Rj9GQUZDRkUvRkhRJjAuMGVtRicvRktRLDAuMzMzMzMzM2VtRictRi42JFEiMUYnRjFGTy1GLjYkUSIwRidGMS8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGOkYx">NiVeJCIiJyIiIkYlIiIh</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SVdFbn5RW3hdOn5tY2QoeF4zfit+Mip4XjJ+LX54fi1+Mix+eF4zfit+NCp4XjJ+K354fi1+NilHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUYjNiktSSNtb0dGJDYtUSomdW1pbnVzMDtGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjYvJSlzdHJldGNoeUdGNi8lKnN5bW1ldHJpY0dGNi8lKGxhcmdlb3BHRjYvJS5tb3ZhYmxlbGltaXRzR0Y2LyUnYWNjZW50R0Y2LyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGRS1GIzYmLUkjbW5HRiQ2JFEiMkYnRjEtRi42LVExJkludmlzaWJsZVRpbWVzO0YnRjFGNEY3RjlGO0Y9Rj9GQS9GRFEmMC4wZW1GJy9GR0ZSLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnL0YyUSdpdGFsaWNGJ0ZKLyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0YxLUYuNi1RKCZtaW51cztGJ0YxRjRGN0Y5RjtGPUY/RkFGQ0ZGLUYjNiZGSkZORldGMS1GLjYtUSIrRidGMUY0RjdGOUY7Rj1GP0ZBRkNGRi1GSzYkUSI0RidGMUYxLUYuNi1RIixGJ0YxRjQvRjhGZ25GOUY7Rj1GP0ZBRlEvRkdRLDAuMzMzMzMzM2VtRictRks2JFEiMUYnRjFGaG8tRiM2JUYtRl5wRjEvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRjZGMQ==">NiUsKCokSSJ4RzYiIiIjISIjRiVGKCIiJSIiIkYqISIi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST1Fbn5RW3hdOn5tY2QoKDJ4KzEpXjMsfjJ4KzEpRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUYjNiYtRiM2Ji1JI21uR0YkNiRRIjJGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUTEmSW52aXNpYmxlVGltZXM7RidGMy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPC8lKXN0cmV0Y2h5R0Y8LyUqc3ltbWV0cmljR0Y8LyUobGFyZ2VvcEdGPC8lLm1vdmFibGVsaW1pdHNHRjwvJSdhY2NlbnRHRjwvJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZLLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnL0Y0USdpdGFsaWNGJ0YzLUY3Ni1RIitGJ0YzRjpGPUY/RkFGQ0ZFRkcvRkpRLDAuMjIyMjIyMmVtRicvRk1GZW4tRjA2JFEiMUYnRjNGMy1GNzYtUSIsRidGM0Y6L0Y+RlRGP0ZBRkNGRUZHRkkvRk1RLDAuMzMzMzMzM2VtRictRjA2JFEiMEYnRjNGam5GZ24vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRjxGMw==">NiUsJkkieEc2IiIiIyIiIkYnIiIhRic=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST5Fbn5aN1t4XTp+bWNkKHheMn4tfjEsfnh+K34xKUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUYjNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y1USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZOLUkjbW5HRiQ2JFEiMUYnRjtGOy1GODYtUSIsRidGO0Y9L0ZBRjNGQkZERkZGSEZKL0ZNUSYwLjBlbUYnL0ZQUSwwLjMzMzMzMzNlbUYnLUZSNiRRIjBGJ0Y7RlVGUS8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGP0Y7">NiUsJkkieEc2IiIiIkYmRiYiIiFGJg==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L1" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Title" alignment="left"><Equation executable="false" style="Text" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYwLUkjbW5HRiQ2JVEjMi5GJy8lJXNpemVHUSMxNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RIn5GJ0YvRjIvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjsvJSlzdHJldGNoeUdGOy8lKnN5bW1ldHJpY0dGOy8lKGxhcmdlb3BHRjsvJS5tb3ZhYmxlbGltaXRzR0Y7LyUnYWNjZW50R0Y7LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGSi1JI21pR0YkNiZRKFRlb3JlbWFGJ0YvLyUnaXRhbGljR0Y7RjJGNS1GTjYmUSZjaGlub0YnRi9GUUYyRjUtRk42JlEjZGVGJ0YvRlFGMkY1LUZONiZRJGxvc0YnRi9GUUYyRjUtRk42JlEncmVzdG9zRidGL0ZRRjItRk42I1EhRidGL0Yy">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYwLUkjbW5HRiQ2JVEjMi5GJy8lJXNpemVHUSMxNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RIn5GJ0YvRjIvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjsvJSlzdHJldGNoeUdGOy8lKnN5bW1ldHJpY0dGOy8lKGxhcmdlb3BHRjsvJS5tb3ZhYmxlbGltaXRzR0Y7LyUnYWNjZW50R0Y7LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGSi1JI21pR0YkNiZRKFRlb3JlbWFGJ0YvLyUnaXRhbGljR0Y7RjJGNS1GTjYmUSZjaGlub0YnRi9GUUYyRjUtRk42JlEjZGVGJ0YvRlFGMkY1LUZONiZRJGxvc0YnRi9GUUYyRjUtRk42JlEncmVzdG9zRidGL0ZRRjItRk42I1EhRidGL0Yy</Equation></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L2" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="538" pixel-height="237" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">#Comprobaci\303\263n de que todos los enteros de una lista son primos entre s\303\255
+areCoprime:=proc(e::list(integer))
+	local i,j;
+	for i from 1 to nops(e) do
+		for j from 1 to nops(e) do
+			if i &lt;&gt; j and igcd(e[i],e[j]) &lt;&gt; 1 then
+				return false;
+			fi;
+		od;
+	od;
+	return true;
+end proc:
+
+# Teorema chino de los restos para Z
+chinoRestos := proc(v::list(integer),m::list(integer)) 
+	local prod_m, c, sol, i, s, t;
+	if not areCoprimeZ(m) then
+		return &quot;Error: los n\303\272meros introducidos han de ser coprimos&quot;;
+	fi;
+	prod_m := mul(m[i], i=1..nops(m));
+	sol := 0; 
+	c := 0;
+	for i from 1 to nops(v) do
+		s:='s';
+		t:='t';
+		igcdex(prod_m/(m[i]), m[i], s, t);
+		c := irem(v[i]*s,m[i]);
+		sol := sol + (c*prod_m)/(m[i]);
+	od;  
+	return sol mod prod_m;
+end proc:
+
+print(`Ejemplos del Teorema Chino de los Restos en Z:`);
+
+print(`f \342\211\241 2 mod 11\134nf \342\211\241 7 mod 13`);
+print(`Resultado implementaci\303\263n propia:`);
+chinoRestos([2,7],[11,13]); 
+print(`Resultado de 'chrem':`);
+chrem([2,7],[11,13]);
+
+print(`f \342\211\241 49 mod 99\134nf \342\211\241 -21 mod 97\134nf \342\211\241 -30 mod 95`);
+print(`Resultado implementaci\303\263n propia:`);
+chinoRestos([49,-21,-30],[99,97,95]);
+print(`Resultado de 'chrem':`);
+chrem([49,-21,-30],[99,97,95]);
+
+print(`f \342\211\241 -5 mod 11\134nf \342\211\241 -2 mod 13\134nf \342\211\241 5 mod 17\134nf \342\211\241 9 mod 19`);
+print(`Resultado implementaci\303\263n propia:`);
+chinoRestos([-5,-2,5,9],[11,13,17,19]); 
+print(`Resultado de 'chrem':`);
+chrem([-5,-2,5,9],[11,13,17,19]); 
+
+print(`Ejemplo en que los valores introducidos no son todos coprimos:`);
+chinoRestos([-5,-2,5,9],[11,13,17,22]);
+chrem([-5,-2,5,9],[11,13,17,22]);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SU9FamVtcGxvc35kZWx+VGVvcmVtYX5DaGlub35kZX5sb3N+UmVzdG9zfmVuflo6RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUZmfiZlcXVpdjt+Mn5tb2R+MTF8K2Z+JmVxdWl2O343fm1vZH4xM0c2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUJSZXN1bHRhZG9+aW1wbGVtZW50YWNpfF53fF52bn5wcm9waWE6RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiNZ</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STZSZXN1bHRhZG9+ZGV+J2NocmVtJzpHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiNZ</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SWhuZn4mZXF1aXY7fjQ5fm1vZH45OXwrZn4mZXF1aXY7fi0yMX5tb2R+OTd8K2Z+JmVxdWl2O34tMzB+bW9kfjk1RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUJSZXN1bHRhZG9+aW1wbGVtZW50YWNpfF53fF52bn5wcm9waWE6RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IicmKSpSJw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STZSZXN1bHRhZG9+ZGV+J2NocmVtJzpHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IicmKSpSJw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SWhvZn4mZXF1aXY7fi01fm1vZH4xMXwrZn4mZXF1aXY7fi0yfm1vZH4xM3wrZn4mZXF1aXY7fjV+bW9kfjE3fCtmfiZlcXVpdjt+OX5tb2R+MTlHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUJSZXN1bHRhZG9+aW1wbGVtZW50YWNpfF53fF52bn5wcm9waWE6RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiU0Pg==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STZSZXN1bHRhZG9+ZGV+J2NocmVtJzpHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiU0Pg==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SWluRWplbXBsb35lbn5xdWV+bG9zfnZhbG9yZXN+aW50cm9kdWNpZG9zfm5vfnNvbn50b2Rvc35jb3ByaW1vczpHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">UVVFcnJvcjp+bG9zfm58Xnd8ZXZtZXJvc35pbnRyb2R1Y2lkb3N+aGFufmRlfnNlcn5jb3ByaW1vczYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20(in%20chrem)%20the%20moduli%20must%20be%20pairwise%20relatively%20prime" hyperlink="true"><Font style="HyperlinkError">Error, (in chrem) the moduli must be pairwise relatively prime</Font></Hyperlink></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L56" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">3. Mcd en un DFU</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L62" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion8" visible="true" pixel-width="910" pixel-height="523" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">#mcd en Z DFU
+mcdDFU := proc (f::polynom, g::polynom)
+	local r, n, i, auxr;
+	r := [f, g];
+	n := [degree(f), degree(g)];
+	i := 2;
+	while r[i] &lt;&gt; 0 do
+		auxr := primpart(rem(lcoeff(r[i])^(n[i-1] -n[i] + 1) * r[i-1], r[i], x), x);
+		r := [op(r), auxr];
+		n := [op(n), degree(auxr)];
+		i := i + 1;
+	end do;
+	return r[i-1]
+end proc:
+
+
+print('________________EJEMPLOS________________');
+print(`En Z: mcd((x^2 + 1)(x + 2), (x^2 + 1)(x - 3))`);
+f := (x^2 + 1)*(x + 2):
+g := (x^2 + 1)*(x - 3):
+mcd := mcdDFU(f, g);
+
+print(`En Z: mcd(2x - 2, 2)`);
+f := 2*x - 2:
+g := 2:
+mcd := mcdDFU(f, g);
+
+
+#mcd en Zp DFU
+mcdDFU := proc (f::polynom, g::polynom, p::integer)
+	local r, n, i, auxr;
+	if not isprime(p) then error &quot;p no es primo&quot; end if;
+	r := [f mod p, g mod p];
+	n := [degree(f), degree(g)];
+	i := 2;
+	while r[i] &lt;&gt; 0 do
+		auxr := primpart(rem((lcoeff(r[i])^(n[i-1] -n[i] + 1)  * r[i-1]) mod p, r[i], x) mod p, x) mod p;
+		r := [op(r), auxr];
+		n := [op(n), degree(auxr)];
+		i := i + 1;
+	end do;
+	return normal(r[i-1])
+end proc:
+
+print('________________________________________');
+print(`En Z2: mcd(x^4 - 4, x^4 + x^2 - 2)`);
+p := 2:
+f := x^4 -4:
+g := x^4 + x^2 -2:
+mcd := mcdDFU(f, g, p);
+
+print(`En Z3: mcd(x, x+2)`);
+p := 3:
+f := x:
+g := x + 2:
+mcd := mcdDFU(f, g, p);
+</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SU5Fbn5aOn5tY2QoKHheMn4rfjEpKHh+K34yKSx+KHheMn4rfjEpKHh+LX4zKSlHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiMUYnRj5GPg==">LCYqJEkieEc2IiIiIyIiIkYnRic=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STVFbn5aOn5tY2QoMnh+LX4yLH4yKUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIj</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUNFbn5aMjp+bWNkKHheNH4tfjQsfnheNH4rfnheMn4tfjIpRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21uR0YkNiRRIjJGJy9GNlEnbm9ybWFsRicvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRjw=">KiRJInhHNiIiIiM=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aMzp+bWNkKHgsfngrMilHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIi</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L64" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L66" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L68" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L70" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L72" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L74" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L4" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font style="Text" size="16">
+
+</Font><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY2LUkjbWlHRiQ2I1EhRictSSNtbkdGJDYlUSM0LkYnLyUlc2l6ZUdRIzE2RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LlEifkYnRjNGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUYsNiZRKEludmVyc29GJ0YzLyUnaXRhbGljR0Y/RjZGOS1GLDYmUSNkZUYnRjNGVEY2RjktRiw2JlEjdW5GJ0YzRlRGNkY5LUYsNiZRKWVsZW1lbnRvRidGM0ZURjZGOS1GLDYmUSNlbkYnRjNGVEY2RjlGWUY5LUYsNiZRJ2N1ZXJwb0YnRjNGVEY2RjktRiw2JlEnZmluaXRvRidGM0ZURjYvJStleGVjdXRhYmxlR0Y/RjY=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY2LUkjbWlHRiQ2I1EhRictSSNtbkdGJDYlUSM0LkYnLyUlc2l6ZUdRIzE2RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LlEifkYnRjNGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUYsNiZRKEludmVyc29GJ0YzLyUnaXRhbGljR0Y/RjZGOS1GLDYmUSNkZUYnRjNGVEY2RjktRiw2JlEjdW5GJ0YzRlRGNkY5LUYsNiZRKWVsZW1lbnRvRidGM0ZURjZGOS1GLDYmUSNlbkYnRjNGVEY2RjlGWUY5LUYsNiZRJ2N1ZXJwb0YnRjNGVEY2RjktRiw2JlEnZmluaXRvRidGM0ZURjYvJStleGVjdXRhYmxlR0Y/RjY=</Equation><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=</Equation></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L21" display="code"><EC-CodeEditor id="CodeEditRegion1" visible="true" pixel-width="500" pixel-height="270" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">invCF := proc(p::integer,f::polynom,g::polynom)
+	if not isprime(p) then
+		return &quot;Erorr: 'p' ha de ser primo&quot;
+	fi;
+	if not Irreduc(f) mod p then
+		return &quot;Erorr: 'f' no es irreducible&quot;
+	fi;
+	gcdex(f,g,x,'s','t');
+	return t mod p;
+end proc:
+
+invCF(5,x^3-x+2,x^2);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRiM2JkY6LUZENi1RMSZJbnZpc2libGVUaW1lcztGJ0Y+RkdGSkZMRk5GUEZSRlQvRldRJjAuMGVtRicvRlpGW29GMEY+RkMtRjs2JFEiNEYnRj5GPg==">LCgqJClJInhHNiIiIiMiIiJGKComRidGKEYlRihGKCIiJUYo</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L109" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L111" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L113" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal">5. Test de irreducibilidad de un polinomio en Fq[x]</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L126" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion12" visible="true" pixel-width="672" pixel-height="593" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">testIrre := proc(f::polynom, q::integer)
+	local aux, n, p, t, i;
+	n := degree(f);
+	if n = 0 or n = 1 then return 'irreducible' end if; 
+	#Prime factors nos devuelve en primer lugar el menor
+	p := NumberTheory[PrimeFactors](q)[1];	
+	#Veamos si f divide a x^q^n -x
+	#Powmod calcula x^(q^n) rem f
+	aux := powmod(x, q^n, f, x) mod p;
+	if a &lt;&gt; 0 then return 'reducible' end if;
+	#Veamos si gcd(x^q^(n/t) -x, f) = 1 para todo t divisor primo de n
+	t := NumberTheory[PrimeFactors](n);	
+	for i from 1 to numelems(t) do
+		if gcd(x^(q^(n/t[i])) - x, f) mod p &lt;&gt; 1 then return 'reducible' end if;
+	end do;
+
+	return 'irreducible'
+end proc:
+
+print('________________EJEMPLOS________________');
+p := 2: q:= 16:
+print(`En Z16: 2`);
+testIrre(2, q);
+print(`En Z16: x`);
+testIrre(x, q);
+print(`En Z16: (x+1)^2`);
+f := (x+1)^2:
+testIrre(f, q);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5aMTY6fjJHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5aMTY6fnhHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STBFbn5aMTY6fih4KzEpXjJHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpyZWR1Y2libGVHNiI=</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L115" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L117" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L119" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L121" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L123" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L125" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L79" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal">7.1 Square free decomposition</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L83" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion9" visible="true" pixel-width="552" pixel-height="517" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">sfd := proc(f::polynom, p::integer)
+	local L, g, j, df, w, waux, pol, s;
+	pol := f;
+	L := [];
+	s := 1;
+	while pol &lt;&gt; 1 do
+		j := 1;
+		g := Quo(pol, Gcd(pol, diff(pol, x)) mod p, x) mod p;
+		while g &lt;&gt; 1 do
+			pol := Quo(pol, g, x) mod p;
+			w := Gcd(pol, g) mod p;
+			waux := Quo(g, w, x) mod p;
+			if waux &lt;&gt; 1 then L := [op(L), [waux, j*s]]; end if;
+			g := w;
+			j := j+1;
+		end do;
+		if f &lt;&gt; 1 then
+			pol := proot(pol, p);
+			s := p*s;
+		end if;
+	end do;
+	return L
+end proc:
+
+print('________________EJEMPLOS________________');
+print(`En Z5^4: (x+1)^2*(x+3)`);
+sfd((x+1)^2*(x+3), 5, 1);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STdFbn5aNV40On4oeCsxKV4yKih4KzMpRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjNGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJy1GWTYkUSIxRidGQi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGRkZCRkIvJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRidGZm4tRiM2Ji1GLDYoLUYsNiZGNEY+Rl5vRkJGZm4tRlk2JFEiMkYnRkJGYW9GZG9GQkZCRmZvRmlvRmFvRmRvRkJGQkZmb0Zpbw==">NyQ3JCwmSSJ4RzYiIiIiIiIkRidGJzckLCZGJUYnRidGJyIiIw==</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L85" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L87" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L95" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal">7.2 Distinct Degree Factorization</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L98" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion10" visible="true" pixel-width="500" pixel-height="441" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">ddf := proc(pol::polynom, p::integer, expo::integer)
+local result, h, i, g, f, q;
+    q := p^expo;
+    f := pol;
+    result := [];
+    h := x;
+    i := 1;
+    while f &lt;&gt; 1 do
+        h := Powmod(h, q, f, x) mod p;
+        g := Gcd(h-x, f) mod p;
+        if g &lt;&gt; 1 then         
+            f := Quo(f, g, x) mod p;
+            h := Rem(h, f, x) mod p;
+            result := [op(result), g];
+        end if;
+        i := i+1;
+    end do;
+    return result
+end proc:
+
+print('________________EJEMPLOS________________');
+print(`En Z5^4: x^4 + 3x^3 + 4x^2 + 3`);
+ddf(x^4+3*x^3+4*x^2+3, 5, 4);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiMUYnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiotRiw2JC1JJW1zdXBHRiQ2JUYwLUZVNiRRIjNGJ0Y+LyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y+RjotRiw2Ji1GVTYkUSIyRidGPi1GOzYtUTEmSW52aXNpYmxlVGltZXM7RidGPkZARkNGRUZHRklGS0ZNRmZuL0ZTRmduLUZfbzYlRjBGaW9GZG9GPkY6LUYsNiZGaW9GXHBGMEY+RjpGYW9GPi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGQkY+Rj4vJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRic=">NyQsJkkieEc2IiIiIkYmRiYsKiokRiQiIiRGJiokRiQiIiNGK0YkRitGKUYm</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L96" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L97" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L101" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L102" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal">7.3 Equal Degree Factorization</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L104" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion11" visible="true" pixel-width="616" pixel-height="707" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
+	local n, a, g1, b, g2, q;
+	n := degree(f);
+	q := p^k;
+	
+     a := Randpoly(rand(n)(), x) mod p;
+	if degree(a) &lt; 1 then return -1 end if;
+	
+	g1 := Gcd(a, f) mod p;
+	if g1 &lt;&gt; 1 then return g1 end if;
+	
+	b := Powmod(a, (q^d - 1)/2, f, x) mod p;
+	
+	g2 := Gcd(b-1, f) mod p;
+	if g2 &lt;&gt; 1 and g2 &lt;&gt; f then return g2
+	else return -1 end if;
+end proc:
+
+edf := proc(f::polynom, p::integer, k::integer, d::integer)
+	local g, result;
+	if degree(f) &lt;= d then return [f] end if;
+
+	g := edfAux(f, p, k, d);
+	while g = -1 do
+		g := edfAux(f, p, k, d);
+	end do;
+
+	result := [op(edf(g, p, k, d)), op(edf(quo(f, g, x) mod p, p, k, d))];
+	
+	return result
+end proc:
+
+print('________________EJEMPLOS________________');
+print(`En Z7: (x+3)*(x-1)`);
+edf((x+3)*(x-1), 7, 1, 1 );
+print(`En Z3: (x+5)*(x-2)`);
+edf((x+5)*(x-2), 3, 1, 1 );</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aNzp+KHgrMykqKHgtMSlHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiM0YnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiZGMEY6LUZVNiRRIjZGJ0Y+Rj4vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkJGPkY+LyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn">NyQsJkkieEc2IiIiIiIiJEYmLCZGJEYmIiInRiY=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aMzp+KHgrNSkqKHgtMilHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiMkYnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiZGMEY6LUZVNiRRIjFGJ0Y+Rj4vJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkJGPkY+LyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn">NyQsJkkieEc2IiIiIiIiI0YmLCZGJEYmRiZGJg==</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L103" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L89" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal">7. Polynomial factorization</Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L131" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion13" visible="true" pixel-width="713" pixel-height="342" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
+	local n, a, g1, b, g2, q;
+	n := degree(f);
+	q := p^k;
+	
+     a := Randpoly(rand(n)(), x) mod p;
+	if degree(a) &lt; 1 then return -1 end if;
+	
+	g1 := Gcd(a, f) mod p;
+	if g1 &lt;&gt; 1 then return g1 end if;
+	
+	b := Powmod(a, (q^d - 1)/2, f, x) mod p;
+	
+	g2 := Gcd(b-1, f) mod p;
+	if g2 &lt;&gt; 1 and g2 &lt;&gt; f then return g2
+	else return -1 end if;
+end proc:
+
+edf := proc(f::polynom, p::integer, k::integer, d::integer)
+	local g, result;
+	if degree(f) &lt;= d then return [f] end if;
+
+	g := edfAux(f, p, k, d);
+	while g = -1 do
+		g := edfAux(f, p, k, d);
+	end do;
+
+	result := [op(edf(g, p, k, d)), op(edf(quo(f, g, x) mod p, p, k, d))];
+	
+	return result
+end proc:
+
+
+polyFact := proc(f::polynom, p::integer, expo::integer)
+	local U, h, i, q, v, facg, j, e, g;
+	q := p^expo;
+	v := f/lcoeff(f) mod p;
+	U := [];
+	h := x;
+	i := 1;
+
+	while v &lt;&gt; 1 do
+		h := Powmod(h, q, v, x) mod p;
+	   	g := Gcd(h-x, v) mod p;
+	   	if g &lt;&gt; 1 then 
+			facg := edf(g, p, expo, i);
+			for j to numelems(facg) do
+				e := 0;
+				while Rem(v, facg[j], x) mod p = 0 do
+					v := Quo(v, facg[j], x) mod p;
+					e := e+1;
+				end do;
+				U := [op(U), [facg[j],e]];
+			end do;
+	   	end if;
+	   	i := i+1;
+	end do;
+	return U
+end proc:
+
+print('________________EJEMPLOS________________');
+print(`En Z5^4: x^4 + 3x^3 + 4x^2 + 3`);
+f := x^4+3*x^3+4*x^2+3:
+p := 5:
+polyFact(f, p, 4);
+#(`mod`(Factors(f), p))[2];
+print(`En Z7: (x+3)*(x-1)`);
+f := (x+3)*(x-1):
+p := 7:
+polyFact(f, p, 1, 1 );
+#(`mod`(Factors(f), p))[2];
+print(`En Z3: (x+5)*(x-2)`);
+f := (x+5)*(x-2):
+p := 3:
+polyFact(f, p, 1, 1 );
+#(`mod`(Factors(f), p))[2];
+</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjFGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJ0ZYLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0ZGRkJGQi8lJW9wZW5HUSJbRicvJSZjbG9zZUdRIl1GJ0Zmbi1GIzYmLUYsNigtRiw2Ki1GLDYkLUklbXN1cEdGJDYlRjQtRlk2JFEiM0YnRkIvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRkJGPi1GLDYmLUZZNiRRIjJGJ0ZCLUY/Ni1RMSZJbnZpc2libGVUaW1lcztGJ0ZCRkRGR0ZJRktGTUZPRlFGam4vRldGW28tRmJwNiVGNEZccUZncEZCRj4tRiw2JkZccUZfcUY0RkJGPkZkcEZCRmZuRlhGXm9GYW9GQkZCRmNvRmZvRl5vRmFvRkJGQkZjb0Zmbw==">NyQ3JCwmSSJ4RzYiIiIiRidGJ0YnNyQsKiokRiUiIiRGJyokRiUiIiNGLUYlRi1GK0YnRic=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aNzp+KHgrMykqKHgtMSlHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjNGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJy1GWTYkUSIxRidGQi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGRkZCRkIvJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRidGZm4tRiM2Ji1GLDYoLUYsNiZGNEY+LUZZNiRRIjZGJ0ZCRkJGZm5GXm9GYW9GZG9GQkZCRmZvRmlvRmFvRmRvRkJGQkZmb0Zpbw==">NyQ3JCwmSSJ4RzYiIiIiIiIkRidGJzckLCZGJUYnIiInRidGJw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aMzp+KHgrNSkqKHgtMilHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjFGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJ0ZYLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0ZGRkJGQi8lJW9wZW5HUSJbRicvJSZjbG9zZUdRIl1GJ0Zmbi1GIzYmLUYsNigtRiw2JkY0Rj4tRlk2JFEiMkYnRkJGQkZmbkZYRl5vRmFvRkJGQkZjb0Zmb0Zeb0Zhb0ZCRkJGY29GZm8=">NyQ3JCwmSSJ4RzYiIiIiRidGJ0YnNyQsJkYlRiciIiNGJ0Yn</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L129" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L130" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L107" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L91" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L10" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"><Font size="16">
+
+
+</Font><Equation executable="false" style="Text" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYuLUkjbW5HRiQ2JVEjNi5GJy8lJXNpemVHUSMxNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RIn5GJ0YvRjIvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjsvJSlzdHJldGNoeUdGOy8lKnN5bW1ldHJpY0dGOy8lKGxhcmdlb3BHRjsvJS5tb3ZhYmxlbGltaXRzR0Y7LyUnYWNjZW50R0Y7LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGSi1JI21pR0YkNiZRKkxvZ2FyaXRtb0YnRi8vJSdpdGFsaWNHUSV0cnVlRicvRjNRJ2l0YWxpY0YnRjUtRk42JlEpZGlzY3JldG9GJ0YvRlFGVEY1LUZONiZRI2VuRidGL0ZRRlRGNS1GTjYmUShjdWVycG9zRidGL0ZRRlRGNS1JJm1mcmFjR0YkNigtRiM2JS1GTjYmUSNGcUYnRi9GUUZULUkobWZlbmNlZEdGJDYnLUYjNiQtRk42JlEieEYnRi9GUUZURjJGL0YyLyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYnRjItRiM2Jy1GTjYmUSJmRidGL0ZRRlQtRmJvNiUtRiM2JkZmb0YvRlFGVEYvRjJGL0ZRRlQvJS5saW5ldGhpY2tuZXNzR1EiMUYnLyUrZGVub21hbGlnbkdRJ2NlbnRlckYnLyUpbnVtYWxpZ25HRl1xLyUpYmV2ZWxsZWRHRjtGMg==">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYuLUkjbW5HRiQ2JVEjNi5GJy8lJXNpemVHUSMxNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RIn5GJ0YvRjIvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjsvJSlzdHJldGNoeUdGOy8lKnN5bW1ldHJpY0dGOy8lKGxhcmdlb3BHRjsvJS5tb3ZhYmxlbGltaXRzR0Y7LyUnYWNjZW50R0Y7LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGSi1JI21pR0YkNiZRKkxvZ2FyaXRtb0YnRi8vJSdpdGFsaWNHUSV0cnVlRicvRjNRJ2l0YWxpY0YnRjUtRk42JlEpZGlzY3JldG9GJ0YvRlFGVEY1LUZONiZRI2VuRidGL0ZRRlRGNS1GTjYmUShjdWVycG9zRidGL0ZRRlRGNS1JJm1mcmFjR0YkNigtRiM2JS1GTjYmUSNGcUYnRi9GUUZULUkobWZlbmNlZEdGJDYnLUYjNiQtRk42JlEieEYnRi9GUUZURjJGL0YyLyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYnRjItRiM2Jy1GTjYmUSJmRidGL0ZRRlQtRmJvNiUtRiM2JkZmb0YvRlFGVEYvRjJGL0ZRRlQvJS5saW5ldGhpY2tuZXNzR1EiMUYnLyUrZGVub21hbGlnbkdRJ2NlbnRlckYnLyUpbnVtYWxpZ25HRl1xLyUpYmV2ZWxsZWRHRjtGMg==</Equation></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L11" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L6" display="code"><EC-CodeEditor id="CodeEditRegion2" visible="true" pixel-width="500" pixel-height="460" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">disc := proc(g::integer,q::integer,h::integer)
+	local m, alpha, a, b,i,j;
+	m := ceil(sqrt(q));
+	alpha[0]:=1;
+	for i from 1 to m-1 do
+		alpha[i]:=(alpha[i-1]*g) mod q;
+	od;
+	a:= g^(-m) mod q;
+	b:=h;
+	for j from 0 to m-1 do
+		if member(b,alpha,'p') then
+			return j*m+p;
+		fi;
+		b:= (b*a) mod q;
+	od;
+
+
+end proc:
+
+disc(5,2017,3);
+disc(7, 137, 11);
+disc(3,17,13);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiVJNQ==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiNY</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIl</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L14" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="Text" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY0LUkjbW5HRiQ2JVEjOC5GJy8lJXNpemVHUSMxNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RIn5GJ0YvRjIvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjsvJSlzdHJldGNoeUdGOy8lKnN5bW1ldHJpY0dGOy8lKGxhcmdlb3BHRjsvJS5tb3ZhYmxlbGltaXRzR0Y7LyUnYWNjZW50R0Y7LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGSi1JI21pR0YkNiZRKkFsZ29yaXRtb0YnRi8vJSdpdGFsaWNHRjtGMkY1LUZONiZRI2RlRidGL0ZRRjJGNS1GTjYmUTNmYWN0b3JpemFjaSYjMjQzO25GJ0YvRlFGMkY1RlNGNS1GTjYmUSpCZXJsZWthbXBGJ0YvRlFGMkY1LUZONiZRI2VuRidGL0ZRRjJGNS1GTjYmUShjdWVycG9zRidGL0ZRRjJGNS1GTjYmUShmaW5pdG9zRidGL0ZRRjJGMg==">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY0LUkjbW5HRiQ2JVEjOC5GJy8lJXNpemVHUSMxNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RIn5GJ0YvRjIvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjsvJSlzdHJldGNoeUdGOy8lKnN5bW1ldHJpY0dGOy8lKGxhcmdlb3BHRjsvJS5tb3ZhYmxlbGltaXRzR0Y7LyUnYWNjZW50R0Y7LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGSi1JI21pR0YkNiZRKkFsZ29yaXRtb0YnRi8vJSdpdGFsaWNHRjtGMkY1LUZONiZRI2RlRidGL0ZRRjJGNS1GTjYmUTNmYWN0b3JpemFjaSYjMjQzO25GJ0YvRlFGMkY1RlNGNS1GTjYmUSpCZXJsZWthbXBGJ0YvRlFGMkY1LUZONiZRI2VuRidGL0ZRRjJGNS1GTjYmUShjdWVycG9zRidGL0ZRRjJGNS1GTjYmUShmaW5pdG9zRidGL0ZRRjJGMg==</Equation></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L8" display="code"><EC-CodeEditor id="CodeEditRegion3" visible="true" pixel-width="700" pixel-height="417" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(LinearAlgebra):
+with(PolynomialTools):
+berlekamp := proc(p::integer,k::integer,f::polynom) # El polinomio ha de ser libre de cuadrados
+	local n, qi, xq,Q,Id,U,B,r,a,g1,g2,b,i,j,l,qiV,M,pol,q;
+	n:=degree(f,x);
+	if coeff(f,x,n) &lt;&gt; 1 then
+		return &quot;Error: el polinomio ha de ser m\303\263nico.&quot;
+	fi;
+	q:=p^k;
+	xq:=Powmod(x,q,f,x) mod p;
+	Q := Matrix(n);
+	for i from 0 to n - 1 do
+		qi := Powmod(xq,i,f,x) mod p;
+		qiV := CoefficientVector(qi,x);
+		for j from 1 to numelems(qiV) do
+			Q[i+1,j]:=qiV[j];
+		od:
+	od:
+	Id:=Matrix(n,shape=identity);
+	M:=Q-Id;
+	U:=GaussianElimination(M);
+	B:=NullSpace(U);
+	r:=numelems(B);
+	if r = 1 then
+		return f;
+	fi:
+	a:= 0;
+	for l from 1 to r do
+		a:= a + FromCoefficientVector(B[l],x)*rand(q)();
+	od:
+	g1:=Gcd(a,f) mod p;
+	if g1&lt;&gt;1 and g1&lt;&gt;f then
+		return g1;
+	fi:
+	b:=Powmod(a,iquo(q-1, 2),f,x) mod p;
+	g2:=Gcd(b-1,f) mod p;
+	if g2&lt;&gt;1 and g2&lt;&gt;f then
+		return g2;
+	fi:
+		return &quot;failure&quot;;
+	
+end proc:
+
+berlekamp(5, 3,x^3+x);
+berlekamp(5, 3,6*x^3+x);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSJ4RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">UUdFcnJvcjp+ZWx+cG9saW5vbWlvfmhhfmRlfnNlcn5tfF53fF52bmljby42Ig==</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L135" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L137" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L139" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L141" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">9. Algoritmo de factorizaci\303\263n en Z[x]</Font></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L148" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion14" visible="true" pixel-width="801" pixel-height="833" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
+	local n, a, g1, b, g2, q;
+	n := degree(f);
+	q := p^k;
+	
+     a := Randpoly(rand(n)(), x) mod p;
+	if degree(a) &lt; 1 then return -1 end if;
+	
+	g1 := Gcd(a, f) mod p;
+	if g1 &lt;&gt; 1 then return g1 end if;
+	
+	b := Powmod(a, (q^d - 1)/2, f, x) mod p;
+	
+	g2 := Gcd(b-1, f) mod p;
+	if g2 &lt;&gt; 1 and g2 &lt;&gt; f then return g2
+	else return -1 end if;
+end proc:
+
+edf := proc(f::polynom, p::integer, k::integer, d::integer)
+	local g, result;
+	if degree(f) &lt;= d then return [f] end if;
+
+	g := edfAux(f, p, k, d);
+	while g = -1 do
+		g := edfAux(f, p, k, d);
+	end do;
+
+	result := [op(edf(g, p, k, d)), op(edf(quo(f, g, x) mod p, p, k, d))];
+	
+	return result
+end proc:
+
+
+polyFact := proc(f::polynom, p::integer, expo::integer)
+	local U, h, i, q, v, facg, j, e, g;
+	q := p^expo;
+	v := f/lcoeff(f) mod p;
+	U := [];
+	h := x;
+	i := 1;
+
+	while v &lt;&gt; 1 do
+		h := Powmod(h, q, v, x) mod p;
+	   	g := Gcd(h-x, v) mod p;
+	   	if g &lt;&gt; 1 then 
+			facg := edf(g, p, expo, i);
+			for j to numelems(facg) do
+				e := 0;
+				while Rem(v, facg[j], x) mod p = 0 do
+					v := Quo(v, facg[j], x) mod p;
+					e := e+1;
+				end do;
+				U := [op(U), [facg[j],e]];
+			end do;
+	   	end if;
+	   	i := i+1;
+	end do;
+	return U
+end proc:
+
+#expande la lista que le pasamos
+auxModFact := proc(l)
+	local lista, i, j;
+	lista := [];
+	for i in l do
+		for j to i[2] do
+			lista := [op(lista), i[1]];
+		end do;
+	end do;
+end proc:
+
+
+#Calcula el productorio con indices
+prodIndices := proc(l, Saux)
+	local i, g;
+	g := 1;
+	for i in Saux do
+		g := g*l[i];
+	end do;
+	return g
+end proc:
+
+
+factZx := proc(f::polynom)
+	local n, A, b, B, p, fbar, modFact, T, s, G, fest, S, gest, hest, Saux;
+	n := degree(f);
+	A := maxnorm(f);
+	
+	#1
+	if n = 1 then return f end if;
+	b := lcoeff(f);
+	B := (n+1)^(1/2)*2^n*A*b;
+
+	#2
+	p := nextprime(floor(2*B));
+	fbar := f mod p;
+	while Gcd(fbar, diff(fbar, x)) mod p &lt;&gt; 1 do
+		p := nextprime(floor(p));
+		fbar := f mod p;
+	end do;
+
+	#3: Factorizaci\303\263n modular
+	modFact := auxModFact(polyFact(f, p, 1));
+
+	#5 Inicializar
+	T := {seq(i, i=1 ..nops(modFact))};
+	s := 1;
+	G := {}; #Factores encontrados
+	fest := f;
+
+	#6 Combinaci\303\263n de factores
+	while 2*s &lt;= nops(T) do
+		bucle:
+		#7 Para todos los ScT con #S=s
+		S := combinat[choose](T, s);
+		for Saux in S do
+			#8 Calcular g*, h*
+			gest := b*expand(prodIndices(modFact, Saux)) mod p;
+			hest := b*expand(prodIndices(modFact, T minus Saux)) mod p;
+			#9
+			if norm(gest,1)*norm(hest,1) &lt;= evalf(B) then
+				T := T minus Saux;
+				G := G union {primpart(gest)};
+				fest := primpart(hest);
+				b := lcoeff(fest);
+				break;
+				goto(bucle)
+			end if;
+		end do;
+		#10
+		s := s+1;
+	end do;
+	return G union {fest}
+end proc:
+
+print('________________EJEMPLOS________________');
+print(`En Z5^4: x^4 + 3x^3 + 4x^2 + 3`);
+factZx(6*x^4 + 5*x^3 + 15*x^2 + 5*x + 4);</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNigtRiw2Ji1JI21uR0YkNiRRIjJGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUTEmSW52aXNpYmxlVGltZXM7RidGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnL0Y3USdpdGFsaWNGJ0YyLyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y2LUY6Ni1RIitGJ0Y2Rj1GQEZCRkRGRkZIRkovRk1RLDAuMjIyMjIyMmVtRicvRlBGXm9GVEZqbi1GMzYkUSI0RidGNkY2LUY6Ni1RIixGJ0Y2Rj0vRkFGWkZCRkRGRkZIRkpGTC9GUFEsMC4zMzMzMzMzZW1GJy1GLDYoLUYsNiYtRjM2JFEiM0YnRjZGOUZRRjZGam5GVEZqbi1GMzYkUSIxRidGNkY2LyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0Y/RjZGNi8lJW9wZW5HUSJ8ZnJGJy8lJmNsb3NlR1EifGhyRic=">PCQsKCokSSJ4RzYiIiIjRidGJSIiIiIiJUYoLChGJCIiJEYlRihGKEYo</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L143" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L145" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L147" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L17" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="Text" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYuLUkjbW5HRiQ2JVEkMTAuRicvJSVzaXplR1EjMTZGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYuUSJ+RidGL0YyLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y7LyUpc3RyZXRjaHlHRjsvJSpzeW1tZXRyaWNHRjsvJShsYXJnZW9wR0Y7LyUubW92YWJsZWxpbWl0c0dGOy8lJ2FjY2VudEdGOy8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRkotSSNtaUdGJDYmUSpBbGdvcml0bW9GJ0YvLyUnaXRhbGljR0Y7RjJGNS1GTjYmUSNkZUYnRi9GUUYyRjUtRk42JlErcHJpbWFsaWRhZEYnRi9GUUYyRjVGU0Y1LUZONiZRJEFLU0YnRi9GUUYyRjI=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYuLUkjbW5HRiQ2JVEkMTAuRicvJSVzaXplR1EjMTZGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYuUSJ+RidGL0YyLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y7LyUpc3RyZXRjaHlHRjsvJSpzeW1tZXRyaWNHRjsvJShsYXJnZW9wR0Y7LyUubW92YWJsZWxpbWl0c0dGOy8lJ2FjY2VudEdGOy8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRkotSSNtaUdGJDYmUSpBbGdvcml0bW9GJ0YvLyUnaXRhbGljR0Y7RjJGNS1GTjYmUSNkZUYnRi9GUUYyRjUtRk42JlErcHJpbWFsaWRhZEYnRi9GUUYyRjVGU0Y1LUZONiZRJEFLU0YnRi9GUUYyRjI=</Equation></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L22" display="code"><EC-CodeEditor id="CodeEditRegion4" visible="true" pixel-width="614" pixel-height="221" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(numtheory):
+aks := proc(n::posint)
+	local r, orden, a, i,fl, cmp;
+	if iperfpow(n) &lt;&gt; FAIL then
+		return &quot;composite&quot;
+	fi;
+
+	r:=1;
+	orden:=0;
+	while(orden &lt; round(log[2](n)^2)) do
+		r:=r+1;
+		orden:=order(n,r);
+		if(orden=FAIL) then
+			orden:=0;
+		fi;
+	od;
+
+	for a from 2 to min(r,n-1) do
+		if igcd(a,n)&lt;&gt;1 then
+			return &quot;composite&quot;;
+		fi;
+	od;
+
+	if n &lt;= r then
+		return &quot;prime&quot;;
+	fi;
+
+	fl:=floor(sqrt(phi(r))*log[2](n));
+	for i from 1 to fl do
+		if Powmod(x+i,n,x^r-1,x) mod n &lt;&gt; Rem(x^n+i,x^r-1,x) mod n then
+			return &quot;composite&quot;;
+		fi;
+	od;
+
+	return &quot;prime&quot;;
+end proc:
+
+# Veinte primos
+print(`Primos:`);
+for i from 1 to 5 do
+	n := ithprime(rand(60..900)());
+	isprime(n);
+	aks(n); 
+od;
+
+# Veinte n\303\272meros que no son primos
+print(`No primos:`);
+for i from 1 to 5 do
+	n:=rand(50..100)()*rand(50..100)();
+	isprime(n); 
+	aks(n);
+od;</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SShQcmltb3M6RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiUubw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">USZwcmltZTYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiUoWyI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">USZwcmltZTYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiVSZQ==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">USZwcmltZTYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiVoRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">USZwcmltZTYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiVqOw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">USZwcmltZTYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SStOb35wcmltb3M6RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiVEVw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSZmYWxzZUclKnByb3RlY3RlZEc=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">USpjb21wb3NpdGU2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiUzag==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSZmYWxzZUclKnByb3RlY3RlZEc=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">USpjb21wb3NpdGU2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiVzYQ==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSZmYWxzZUclKnByb3RlY3RlZEc=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">USpjb21wb3NpdGU2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiVlSA==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSZmYWxzZUclKnByb3RlY3RlZEc=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">USpjb21wb3NpdGU2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiUrag==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSZmYWxzZUclKnByb3RlY3RlZEc=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">USpjb21wb3NpdGU2Ig==</Equation></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L20" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L23" drawlabel="true">
+<Input>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
+</Input>
+</Group></Presentation-Block>
+</Worksheet>
