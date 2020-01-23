@@ -83,6 +83,16 @@
 <Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
 <Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
 </Styles>
+<Metadata-table>
+    <Metadata-category name="&lt;default&gt;"/>
+    <Metadata-tag id="0" category="&lt;default&gt;" name="Document Properties">
+        <Metadata-attribute name="Palabras claves" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Autor" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Item List" value="true"/>
+        <Metadata-attribute name="T\303\255tulo" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Asunto " value="&lt;default&gt;"/>
+    </Metadata-tag>
+</Metadata-table>
 <Task-table>
     <Task-category name="&lt;default&gt;"/>
 </Task-table>
@@ -101,7 +111,9 @@
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="696" pixel-height="688" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">parejas := proc(F)
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L7" display="code"><EC-CodeEditor id="CodeEditRegion0" visible="true" pixel-width="734" pixel-height="460" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(Groebner):
+
+parejas := proc(G)
 	local res, i, j;
 	res := {};
 	for i from 1 to nops(G) do
@@ -111,34 +123,112 @@
 			end if;
 		end do;
 	end do;
-end proc;
+	return res
+end proc:
 
+parejash := proc(h, G)
+	local res, i, j;
+	res := {};
+	for j from 1 to nops(G) do
+		res := res union {{h, G[j]}};
+	end do;	
+	return res
+end proc:
+
+mcmMonomios := proc(m1, m2, vars)
+	local i, res, d1, d2;
+	res := 1;
+	for i from 1 to nops(vars) do
+		d1 := degree(m1, vars[i]);
+		d2 := degree(m2, vars[i]);
+		if d1 - d2 &gt; 0 then
+			res := res*vars[i]^d1;
+		else
+			res := res*vars[i]^d2;
+		end if;
+	end do;
+	return res
+end proc:
+
+mcmMonomios(x*y*z^2,x*y^2, [x,y,z]);
+
+
+myspoly := proc(f, g, vars, orden)
+	local ltf, ltg, mcm;
+	ltf := LeadingMonomial(f, orden(op(vars)));
+	ltg := LeadingMonomial(g, orden(op(vars)));
+	mcm := mcmMonomios(ltf, ltg, vars);
+	return expand(simplify(mcm*f/ltf - mcm*g/ltg));
+end proc:
+
+myspoly(x^2, x*y+y^2, [x,y], plex);
+
+mydivide := proc(m1, m2, vars)
+	local i;
+	for i from 1 to nops(vars) do
+		if degree(m2, vars[i]) - degree(m1, vars[i]) &lt; 0 then
+			return false
+		end if;
+	end do;
+	return true
+end proc:
+
+algunoDivide := proc(farray, h, vars, orden)
+	local lti, lth, i;
+	for i from 1 to nops(farray) do
+		lti := LeadingMonomial(farray[i], orden(op(vars)));
+		lth := LeadingMonomial(h, orden(op(vars)));
+		if mydivide(lti, lth, vars) then
+			return true, i
+		end if;
+	end do;
+	return false, 0
+end proc:
+
+divisionPols := proc(f, farray, vars, orden)
+	local h, a, i, lti, lth, existe, ret;
+	h := f;
+	a := [seq(0, i=1..nops(farray))];
+	existe, i := algunoDivide(farray, h, vars, orden);
+	while h &lt;&gt; 0 and existe do
+		lti := LeadingMonomial(farray[i], orden(op(vars)));
+		lth := LeadingMonomial(h, orden(op(vars)));
+		a[i] := a[i] + lth/lti;
+		h := h - lth/lti*farray[i];
+		existe, i := algunoDivide(farray, h, vars, orden);
+	end do;
+	return a,h
+end proc:
+
+divisionPols(x*y^2-x, [y^2-1], [x,y], plex);
 
 baseGroebner := proc(F, variables, orden)
-	local G, paresCriticos, Fi, Fj, gi, gj, a, S, paresAcabados;
+	local G, paresCriticos, Fi, Fj, gi, gj, a, S, h;
 	G := F;
-	paresAcabados := {};
 	paresCriticos := parejas(G);
 	while paresCriticos &lt;&gt; {} do
 		Fi, Fj := paresCriticos[1,1], paresCriticos[1,2];
 		paresCriticos := paresCriticos minus paresCriticos[1];
-		#Saca el coef mas significativo de Fi segun el orden dado y lo guarda en gi
-		lcoeff(Fi, orden, gi);
-		lcoeff(Fj, orden, gj);
-		#a es el mcm de gi y gj
-		a := lcm(gi, gj);
-		#Calculamos el S-polinomio
-		S := Quo(a,gi)*Fi - Quo(a,gj)*Fj;
-		##Aqu\303\255 se reduciria S con el alg de div
-		#Y se van a\303\261adiendo los restos a G
-		
-		paresAcabados := paresAcabados union {{Fi,Fj}};
-		paresCriticos := parejas(G) minus paresAcabados;
+		#NF es mas o menos el de division de pols
+		h := NF(myspoly(f,g), G);
+		if h &lt;&gt; 0 then 
+			paresCriticos := paresCriticos union parejash(h,G);
+			G := G union {h};
+		end if;
 	end do;
-end proc;</EC-CodeEditor></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
+end proc:</EC-CodeEditor>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RMSZJbnZpc2libGVUaW1lcztGJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGTC1JJW1zdXBHRiQ2JS1GLDYlUSJ5RidGL0YyLUkjbW5HRiQ2JFEiMkYnRjkvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRjUtRlA2JS1GLDYlUSJ6RidGL0YyRlVGWUY5">KihJInhHNiIiIiJJInlHRiQiIiNJInpHRiRGJw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYnLUkjbW9HRiQ2LVEqJnVtaW51czA7RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y0LyUpc3RyZXRjaHlHRjQvJSpzeW1tZXRyaWNHRjQvJShsYXJnZW9wR0Y0LyUubW92YWJsZWxpbWl0c0dGNC8lJ2FjY2VudEdGNC8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRkMtRiM2Ji1JI21pR0YkNiVRInhGJy8lJ2l0YWxpY0dRJXRydWVGJy9GMFEnaXRhbGljRictRiw2LVExJkludmlzaWJsZVRpbWVzO0YnRi9GMkY1RjdGOUY7Rj1GPy9GQlEmMC4wZW1GJy9GRUZVLUklbXN1cEdGJDYlLUZJNiVRInlGJ0ZMRk8tSSNtbkdGJDYkUSIyRidGLy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGLy8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGNEYv">LCQqJkkieEc2IiIiIkkieUdGJSIiIyEiIg==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%20computation%20interrupted" hyperlink="true"><Font style="HyperlinkWarning">Warning,  computation interrupted</Font></Hyperlink></Text-field>
+</Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L6" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Worksheet>
