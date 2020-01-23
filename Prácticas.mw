@@ -88,8 +88,8 @@
     <Metadata-tag id="0" category="&lt;default&gt;" name="Document Properties">
         <Metadata-attribute name="Palabras claves" value="&lt;default&gt;"/>
         <Metadata-attribute name="Autor" value="&lt;default&gt;"/>
-        <Metadata-attribute name="Item List" value="true"/>
         <Metadata-attribute name="T\303\255tulo" value="&lt;default&gt;"/>
+        <Metadata-attribute name="Item List" value="true"/>
         <Metadata-attribute name="Asunto " value="&lt;default&gt;"/>
     </Metadata-tag>
 </Metadata-table>
@@ -103,7 +103,7 @@
 <Input>
 <Text-field style="Text" layout="Title" alignment="left">1.1 Euclides</Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion6" visible="true" pixel-width="656" pixel-height="301" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(GaussInt, GIrem, GInormal):
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L3" display="code"><EC-CodeEditor id="CodeEditRegion6" visible="true" pixel-width="656" pixel-height="301" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(GaussInt, GIrem, GInormal):
 
 #Euclides para Z
 euclides := proc (f::integer, g::integer)
@@ -186,7 +186,7 @@ print(`En Q[x]: mcd(x-1, (x+1)(x-3))`);
 euclidesqx(x-1, (x+1)*(x-3));
 
 
-#Euclides para Fp[x]
+#Euclides para Fq[x]
 euclidesfpx := proc (f::polynom, g::polynom, p::integer)
    local r0, r1, r2;
    if not isprime(p) then error &quot;p no es primo&quot; end if;
@@ -200,8 +200,8 @@ euclidesfpx := proc (f::polynom, g::polynom, p::integer)
 end proc:
 
 print('________________________________________');
-print(`En Z7[x]: mcd(x^2 - 1, x + 1)`);
-euclidesfpx(x^2 - 1, x + 1, 7);</EC-CodeEditor>
+print(`En F7[x]: mcd(rx^2 - r, rx + r)`);
+euclidesfpx(r*x^2 - r, r + x*r, 7);</EC-CodeEditor>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
@@ -278,10 +278,10 @@ euclidesfpx(x^2 - 1, x + 1, 7);</EC-CodeEditor>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST5Fbn5aN1t4XTp+bWNkKHheMn4tfjEsfnh+K34xKUc2Ig==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUBFbn5GN1t4XTp+bWNkKHJ4XjJ+LX5yLH5yeH4rfnIpRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGTC1JI21uR0YkNiRRIjFGJ0Y5Rjk=">LCZJInhHNiIiIiJGJUYl</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiYtSSNtaUdGJDYlUSJyRicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVExJkludmlzaWJsZVRpbWVzO0YnL0Y1USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUYuNiVRInhGJ0YxRjRGOy1GODYtUSIrRidGO0Y9RkBGQkZERkZGSEZKL0ZNUSwwLjIyMjIyMjJlbUYnL0ZQRlhGLUY7">LCYqJkkickc2IiIiIkkieEdGJUYmRiZGJEYm</Equation></Text-field>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L42" drawlabel="true">
 <Input>
@@ -292,7 +292,7 @@ euclidesfpx(x^2 - 1, x + 1, 7);</EC-CodeEditor>
 <Input>
 <Text-field style="Text" layout="Title" alignment="left">1.2. Euclides extendido</Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion7" visible="true" pixel-width="769" pixel-height="398" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(GaussInt, GIrem, GInormal, GIquo):
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L5" display="code"><EC-CodeEditor id="CodeEditRegion7" visible="true" pixel-width="769" pixel-height="398" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(GaussInt, GIrem, GInormal, GIquo):
 
 #Euclides para Z
 euclidesExt := proc (f::integer, g::integer)
@@ -421,7 +421,7 @@ g := 2*x+1:
 mcd, u, v := euclidesExtqx(f,g);
 evalb(mcd -u*f -v*g = 0);
 
-#Euclides para Fp[x]
+#Euclides para Fq[x]
 euclidesExtfpx := proc (f::polynom, g::polynom, p::integer)
    local r0, r1, r2, s0, s1, s2, t0, t1, t2;
    if not isprime(p) then error &quot;p no es primo&quot; end if;
@@ -439,9 +439,9 @@ euclidesExtfpx := proc (f::polynom, g::polynom, p::integer)
 end proc:
 
 print('________________________________________');
-print(`En Z7[x]: mcd(x^2 - 1, x + 1)`);
-f := x^2 - 1:
-g := x + 1:
+print(`En F7[x]: mcd(rx^2 - r, rx + r)`);
+f := r*x^2 - r:
+g := r*x + r:
 p := 7:
 mcd, u, v := euclidesExtfpx(f,g,p);
 evalb((mcd -u*f -v*g) mod p = 0);</EC-CodeEditor>
@@ -545,10 +545,10 @@ evalb((mcd -u*f -v*g) mod p = 0);</EC-CodeEditor>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST5Fbn5aN1t4XTp+bWNkKHheMn4tfjEsfnh+K34xKUc2Ig==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUBFbn5GN1t4XTp+bWNkKHJ4XjJ+LX5yLH5yeH4rfnIpRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUYjNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y1USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZOLUkjbW5HRiQ2JFEiMUYnRjtGOy1GODYtUSIsRidGO0Y9L0ZBRjNGQkZERkZGSEZKL0ZNUSYwLjBlbUYnL0ZQUSwwLjMzMzMzMzNlbUYnLUZSNiRRIjBGJ0Y7RlVGUS8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGP0Y7">NiUsJkkieEc2IiIiIkYmRiYiIiFGJg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYqLUYjNiYtRiM2Ji1JI21pR0YkNiVRInJGJy8lJ2l0YWxpY0dRJXRydWVGJy8lLG1hdGh2YXJpYW50R1EnaXRhbGljRictSSNtb0dGJDYtUTEmSW52aXNpYmxlVGltZXM7RicvRjdRJ25vcm1hbEYnLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZBLyUpc3RyZXRjaHlHRkEvJSpzeW1tZXRyaWNHRkEvJShsYXJnZW9wR0ZBLyUubW92YWJsZWxpbWl0c0dGQS8lJ2FjY2VudEdGQS8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRlAtRjA2JVEieEYnRjNGNkY9LUY6Ni1RIitGJ0Y9Rj9GQkZERkZGSEZKRkwvRk9RLDAuMjIyMjIyMmVtRicvRlJGWkYvRj0tRjo2LVEiLEYnRj1GPy9GQ0Y1RkRGRkZIRkpGTEZOL0ZSUSwwLjMzMzMzMzNlbUYnLUkjbW5HRiQ2JFEiMEYnRj1GZm4tRl1vNiRRIjFGJ0Y9LyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0ZBRj0=">NiUsJiomSSJyRzYiIiIiSSJ4R0YmRidGJ0YlRiciIiFGJw==</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSV0cnVlRyUqcHJvdGVjdGVkRw==</Equation></Text-field>
@@ -678,7 +678,7 @@ chrem([-5,-2,5,9],[11,13,17,22]);</EC-CodeEditor>
 <Input>
 <Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion8" visible="true" pixel-width="910" pixel-height="523" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">#mcd en Z DFU
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L8" display="code"><EC-CodeEditor id="CodeEditRegion8" visible="true" pixel-width="910" pixel-height="523" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">#mcd en Z DFU
 mcdDFU := proc (f::polynom, g::polynom)
 	local r, n, i, auxr;
 	r := [f, g];
@@ -742,7 +742,7 @@ mcd := mcdDFU(f, g, p);
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SU5Fbn5aOn5tY2QoKHheMn4rfjEpKHh+K34yKSx+KHheMn4rfjEpKHh+LX4zKSlHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiMUYnRj5GPg==">LCYqJEkieEc2IiIiIyIiIkYnRic=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiMUYnRj5GPg==">LCYqJClJInhHNiIiIiMiIiJGKEYoRig=</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STVFbn5aOn5tY2QoMnh+LX4yLH4yKUc2Ig==</Equation></Text-field>
@@ -757,7 +757,7 @@ mcd := mcdDFU(f, g, p);
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUNFbn5aMjp+bWNkKHheNH4tfjQsfnheNH4rfnheMn4tfjIpRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21uR0YkNiRRIjJGJy9GNlEnbm9ybWFsRicvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRjw=">KiRJInhHNiIiIiM=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21uR0YkNiRRIjJGJy9GNlEnbm9ybWFsRicvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRjw=">KiQpSSJ4RzYiIiIjIiIi</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aMzp+bWNkKHgsfngrMilHNiI=</Equation></Text-field>
@@ -799,7 +799,7 @@ mcd := mcdDFU(f, g, p);
 <Input>
 <Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font style="Text" size="16">
 
-</Font><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY2LUkjbWlHRiQ2I1EhRictSSNtbkdGJDYlUSM0LkYnLyUlc2l6ZUdRIzE2RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LlEifkYnRjNGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUYsNiZRKEludmVyc29GJ0YzLyUnaXRhbGljR0Y/RjZGOS1GLDYmUSNkZUYnRjNGVEY2RjktRiw2JlEjdW5GJ0YzRlRGNkY5LUYsNiZRKWVsZW1lbnRvRidGM0ZURjZGOS1GLDYmUSNlbkYnRjNGVEY2RjlGWUY5LUYsNiZRJ2N1ZXJwb0YnRjNGVEY2RjktRiw2JlEnZmluaXRvRidGM0ZURjYvJStleGVjdXRhYmxlR0Y/RjY=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY2LUkjbWlHRiQ2I1EhRictSSNtbkdGJDYlUSM0LkYnLyUlc2l6ZUdRIzE2RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LlEifkYnRjNGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUYsNiZRKEludmVyc29GJ0YzLyUnaXRhbGljR0Y/RjZGOS1GLDYmUSNkZUYnRjNGVEY2RjktRiw2JlEjdW5GJ0YzRlRGNkY5LUYsNiZRKWVsZW1lbnRvRidGM0ZURjZGOS1GLDYmUSNlbkYnRjNGVEY2RjlGWUY5LUYsNiZRJ2N1ZXJwb0YnRjNGVEY2RjktRiw2JlEnZmluaXRvRidGM0ZURjYvJStleGVjdXRhYmxlR0Y/RjY=</Equation><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=</Equation></Text-field>
+</Font><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY2LUkjbWlHRiQ2I1EhRictSSNtbkdGJDYlUSM0LkYnLyUlc2l6ZUdRIzE2RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LlEifkYnRjNGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUYsNiZRKEludmVyc29GJ0YzLyUnaXRhbGljR0Y/RjZGOS1GLDYmUSNkZUYnRjNGVEY2RjktRiw2JlEjdW5GJ0YzRlRGNkY5LUYsNiZRKWVsZW1lbnRvRidGM0ZURjZGOS1GLDYmUSNlbkYnRjNGVEY2RjlGWUY5LUYsNiZRJ2N1ZXJwb0YnRjNGVEY2RjktRiw2JlEnZmluaXRvRidGM0ZURjYvJStleGVjdXRhYmxlR0Y/RjY=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY2LUkjbWlHRiQ2I1EhRictSSNtbkdGJDYlUSM0LkYnLyUlc2l6ZUdRIzE2RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LlEifkYnRjNGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUYsNiZRKEludmVyc29GJ0YzLyUnaXRhbGljR0Y/RjZGOS1GLDYmUSNkZUYnRjNGVEY2RjktRiw2JlEjdW5GJ0YzRlRGNkY5LUYsNiZRKWVsZW1lbnRvRidGM0ZURjZGOS1GLDYmUSNlbkYnRjNGVEY2RjlGWUY5LUYsNiZRJ2N1ZXJwb0YnRjNGVEY2RjktRiw2JlEnZmluaXRvRidGM0ZURjYvJStleGVjdXRhYmxlR0Y/RjY=</Equation><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">JSFH</Equation></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L21" display="code"><EC-CodeEditor id="CodeEditRegion1" visible="true" pixel-width="500" pixel-height="270" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">invCF := proc(p::integer,f::polynom,g::polynom)
 	if not isprime(p) then
@@ -835,7 +835,7 @@ invCF(5,x^3-x+2,x^2);</EC-CodeEditor>
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion12" visible="true" pixel-width="672" pixel-height="593" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">testIrre := proc(f::polynom, q::integer)
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L11" display="code"><EC-CodeEditor id="CodeEditRegion12" visible="true" pixel-width="672" pixel-height="650" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">testIrre := proc(f::polynom, q::integer)
 	local aux, n, p, t, i;
 	n := degree(f);
 	if n = 0 or n = 1 then return 'irreducible' end if; 
@@ -862,6 +862,12 @@ print(`En Z16: x`);
 testIrre(x, q);
 print(`En Z16: (x+1)^2`);
 f := (x+1)^2:
+testIrre(f, q);
+print(`En F16: x + r`);
+testIrre(x + r, q);
+print(`En F7: (x+r)^2`);
+q := 7:
+f := (x+r)^2:
 testIrre(f, q);</EC-CodeEditor>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
@@ -880,6 +886,18 @@ testIrre(f, q);</EC-CodeEditor>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STBFbn5aMTY6fih4KzEpXjJHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpyZWR1Y2libGVHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SS5Fbn5GMTY6fnh+K35yRzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SS9Fbn5GNzp+KHgrcileMkc2Ig==</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpyZWR1Y2libGVHNiI=</Equation></Text-field>
@@ -923,7 +941,7 @@ testIrre(f, q);</EC-CodeEditor>
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion9" visible="true" pixel-width="552" pixel-height="517" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">sfd := proc(f::polynom, p::integer)
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L13" display="code"><EC-CodeEditor id="CodeEditRegion9" visible="true" pixel-width="552" pixel-height="555" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">sfd := proc(f::polynom, p::integer)
 	local L, g, j, df, w, waux, pol, s;
 	pol := f;
 	L := [];
@@ -978,7 +996,7 @@ sfd((x+1)^2*(x+3), 5, 1);</EC-CodeEditor>
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion10" visible="true" pixel-width="500" pixel-height="441" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">ddf := proc(pol::polynom, p::integer, expo::integer)
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L15" display="code"><EC-CodeEditor id="CodeEditRegion10" visible="true" pixel-width="500" pixel-height="441" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">ddf := proc(pol::polynom, p::integer, expo::integer)
 local result, h, i, g, f, q;
     q := p^expo;
     f := pol;
@@ -1008,7 +1026,7 @@ ddf(x^4+3*x^3+4*x^2+3, 5, 4);</EC-CodeEditor>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiMUYnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiotRiw2JC1JJW1zdXBHRiQ2JUYwLUZVNiRRIjNGJ0Y+LyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y+RjotRiw2Ji1GVTYkUSIyRidGPi1GOzYtUTEmSW52aXNpYmxlVGltZXM7RidGPkZARkNGRUZHRklGS0ZNRmZuL0ZTRmduLUZfbzYlRjBGaW9GZG9GPkY6LUYsNiZGaW9GXHBGMEY+RjpGYW9GPi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGQkY+Rj4vJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRic=">NyQsJkkieEc2IiIiIkYmRiYsKiokRiQiIiRGJiokRiQiIiNGK0YkRitGKUYm</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNiYtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUkjbW5HRiQ2JFEiMUYnRj5GPi1GOzYtUSIsRidGPkZAL0ZERjZGRUZHRklGS0ZNL0ZQUSYwLjBlbUYnL0ZTUSwwLjMzMzMzMzNlbUYnLUYsNiotRiw2JC1JJW1zdXBHRiQ2JUYwLUZVNiRRIjNGJ0Y+LyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y+RjotRiw2Ji1GVTYkUSIyRidGPi1GOzYtUTEmSW52aXNpYmxlVGltZXM7RidGPkZARkNGRUZHRklGS0ZNRmZuL0ZTRmduLUZfbzYlRjBGaW9GZG9GPkY6LUYsNiZGaW9GXHBGMEY+RjpGYW9GPi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGQkY+Rj4vJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRic=">NyQsJkkieEc2IiIiIkYmRiYsKiokKUYkIiIkRiZGJiomIiIjRiYpRiRGLEYmRiYqJkYsRiZGJEYmRiZGKkYm</Equation></Text-field>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L96" drawlabel="true">
 <Input>
@@ -1034,7 +1052,7 @@ ddf(x^4+3*x^3+4*x^2+3, 5, 4);</EC-CodeEditor>
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion11" visible="true" pixel-width="616" pixel-height="707" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L17" display="code"><EC-CodeEditor id="CodeEditRegion11" visible="true" pixel-width="616" pixel-height="707" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
 	local n, a, g1, b, g2, q;
 	n := degree(f);
 	q := p^k;
@@ -1093,14 +1111,14 @@ edf((x+5)*(x-2), 3, 1, 1 );</EC-CodeEditor>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L89" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal">7. Polynomial factorization</Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">7. Factorizaci\303\263n de un polinomio en un cuerpo finito</Font></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L131" drawlabel="true">
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion13" visible="true" pixel-width="713" pixel-height="342" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L19" display="code"><EC-CodeEditor id="CodeEditRegion13" visible="true" pixel-width="713" pixel-height="342" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
 	local n, a, g1, b, g2, q;
 	n := degree(f);
 	q := p^k;
@@ -1184,7 +1202,7 @@ polyFact(f, p, 1, 1 );
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjFGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJ0ZYLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0ZGRkJGQi8lJW9wZW5HUSJbRicvJSZjbG9zZUdRIl1GJ0Zmbi1GIzYmLUYsNigtRiw2Ki1GLDYkLUklbXN1cEdGJDYlRjQtRlk2JFEiM0YnRkIvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRkJGPi1GLDYmLUZZNiRRIjJGJ0ZCLUY/Ni1RMSZJbnZpc2libGVUaW1lcztGJ0ZCRkRGR0ZJRktGTUZPRlFGam4vRldGW28tRmJwNiVGNEZccUZncEZCRj4tRiw2JkZccUZfcUY0RkJGPkZkcEZCRmZuRlhGXm9GYW9GQkZCRmNvRmZvRl5vRmFvRkJGQkZjb0Zmbw==">NyQ3JCwmSSJ4RzYiIiIiRidGJ0YnNyQsKiokRiUiIiRGJyokRiUiIiNGLUYlRi1GK0YnRic=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjFGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJ0ZYLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0ZGRkJGQi8lJW9wZW5HUSJbRicvJSZjbG9zZUdRIl1GJ0Zmbi1GIzYmLUYsNigtRiw2Ki1GLDYkLUklbXN1cEdGJDYlRjQtRlk2JFEiM0YnRkIvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRkJGPi1GLDYmLUZZNiRRIjJGJ0ZCLUY/Ni1RMSZJbnZpc2libGVUaW1lcztGJ0ZCRkRGR0ZJRktGTUZPRlFGam4vRldGW28tRmJwNiVGNEZccUZncEZCRj4tRiw2JkZccUZfcUY0RkJGPkZkcEZCRmZuRlhGXm9GYW9GQkZCRmNvRmZvRl5vRmFvRkJGQkZjb0Zmbw==">NyQ3JCwmSSJ4RzYiIiIiRidGJ0YnNyQsKiokKUYlIiIkRidGJyomIiIjRicpRiVGLkYnRicqJkYuRidGJUYnRidGLEYnRic=</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aNzp+KHgrMykqKHgtMSlHNiI=</Equation></Text-field>
@@ -1226,9 +1244,9 @@ polyFact(f, p, 1, 1 );
 </Font><Equation executable="false" style="Text" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYuLUkjbW5HRiQ2JVEjNi5GJy8lJXNpemVHUSMxNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RIn5GJ0YvRjIvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjsvJSlzdHJldGNoeUdGOy8lKnN5bW1ldHJpY0dGOy8lKGxhcmdlb3BHRjsvJS5tb3ZhYmxlbGltaXRzR0Y7LyUnYWNjZW50R0Y7LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGSi1JI21pR0YkNiZRKkxvZ2FyaXRtb0YnRi8vJSdpdGFsaWNHUSV0cnVlRicvRjNRJ2l0YWxpY0YnRjUtRk42JlEpZGlzY3JldG9GJ0YvRlFGVEY1LUZONiZRI2VuRidGL0ZRRlRGNS1GTjYmUShjdWVycG9zRidGL0ZRRlRGNS1JJm1mcmFjR0YkNigtRiM2JS1GTjYmUSNGcUYnRi9GUUZULUkobWZlbmNlZEdGJDYnLUYjNiQtRk42JlEieEYnRi9GUUZURjJGL0YyLyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYnRjItRiM2Jy1GTjYmUSJmRidGL0ZRRlQtRmJvNiUtRiM2JkZmb0YvRlFGVEYvRjJGL0ZRRlQvJS5saW5ldGhpY2tuZXNzR1EiMUYnLyUrZGVub21hbGlnbkdRJ2NlbnRlckYnLyUpbnVtYWxpZ25HRl1xLyUpYmV2ZWxsZWRHRjtGMg==">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYuLUkjbW5HRiQ2JVEjNi5GJy8lJXNpemVHUSMxNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RIn5GJ0YvRjIvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjsvJSlzdHJldGNoeUdGOy8lKnN5bW1ldHJpY0dGOy8lKGxhcmdlb3BHRjsvJS5tb3ZhYmxlbGltaXRzR0Y7LyUnYWNjZW50R0Y7LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGSi1JI21pR0YkNiZRKkxvZ2FyaXRtb0YnRi8vJSdpdGFsaWNHUSV0cnVlRicvRjNRJ2l0YWxpY0YnRjUtRk42JlEpZGlzY3JldG9GJ0YvRlFGVEY1LUZONiZRI2VuRidGL0ZRRlRGNS1GTjYmUShjdWVycG9zRidGL0ZRRlRGNS1JJm1mcmFjR0YkNigtRiM2JS1GTjYmUSNGcUYnRi9GUUZULUkobWZlbmNlZEdGJDYnLUYjNiQtRk42JlEieEYnRi9GUUZURjJGL0YyLyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYnRjItRiM2Jy1GTjYmUSJmRidGL0ZRRlQtRmJvNiUtRiM2JkZmb0YvRlFGVEYvRjJGL0ZRRlQvJS5saW5ldGhpY2tuZXNzR1EiMUYnLyUrZGVub21hbGlnbkdRJ2NlbnRlckYnLyUpbnVtYWxpZ25HRl1xLyUpYmV2ZWxsZWRHRjtGMg==</Equation></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L11" drawlabel="true">
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L149" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L6" display="code"><EC-CodeEditor id="CodeEditRegion2" visible="true" pixel-width="500" pixel-height="460" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">disc := proc(g::integer,q::integer,h::integer)
 	local m, alpha, a, b,i,j;
@@ -1265,7 +1283,7 @@ disc(3,17,13);</EC-CodeEditor>
 <Input>
 <Text-field style="Text" layout="Normal"><Equation executable="false" style="Text" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY0LUkjbW5HRiQ2JVEjOC5GJy8lJXNpemVHUSMxNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RIn5GJ0YvRjIvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjsvJSlzdHJldGNoeUdGOy8lKnN5bW1ldHJpY0dGOy8lKGxhcmdlb3BHRjsvJS5tb3ZhYmxlbGltaXRzR0Y7LyUnYWNjZW50R0Y7LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGSi1JI21pR0YkNiZRKkFsZ29yaXRtb0YnRi8vJSdpdGFsaWNHRjtGMkY1LUZONiZRI2RlRidGL0ZRRjJGNS1GTjYmUTNmYWN0b3JpemFjaSYjMjQzO25GJ0YvRlFGMkY1RlNGNS1GTjYmUSpCZXJsZWthbXBGJ0YvRlFGMkY1LUZONiZRI2VuRidGL0ZRRjJGNS1GTjYmUShjdWVycG9zRidGL0ZRRjJGNS1GTjYmUShmaW5pdG9zRidGL0ZRRjJGMg==">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY0LUkjbW5HRiQ2JVEjOC5GJy8lJXNpemVHUSMxNkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi5RIn5GJ0YvRjIvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRjsvJSlzdHJldGNoeUdGOy8lKnN5bW1ldHJpY0dGOy8lKGxhcmdlb3BHRjsvJS5tb3ZhYmxlbGltaXRzR0Y7LyUnYWNjZW50R0Y7LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGSi1JI21pR0YkNiZRKkFsZ29yaXRtb0YnRi8vJSdpdGFsaWNHRjtGMkY1LUZONiZRI2RlRidGL0ZRRjJGNS1GTjYmUTNmYWN0b3JpemFjaSYjMjQzO25GJ0YvRlFGMkY1RlNGNS1GTjYmUSpCZXJsZWthbXBGJ0YvRlFGMkY1LUZONiZRI2VuRidGL0ZRRjJGNS1GTjYmUShjdWVycG9zRidGL0ZRRjJGNS1GTjYmUShmaW5pdG9zRidGL0ZRRjJGMg==</Equation></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L8" display="code"><EC-CodeEditor id="CodeEditRegion3" visible="true" pixel-width="700" pixel-height="417" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(LinearAlgebra):
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L150" display="code"><EC-CodeEditor id="CodeEditRegion3" visible="true" pixel-width="700" pixel-height="417" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(LinearAlgebra):
 with(PolynomialTools):
 berlekamp := proc(p::integer,k::integer,f::polynom) # El polinomio ha de ser libre de cuadrados
 	local n, qi, xq,Q,Id,U,B,r,a,g1,g2,b,i,j,l,qiV,M,pol,q;
@@ -1340,7 +1358,7 @@ berlekamp(5, 3,6*x^3+x);</EC-CodeEditor>
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion14" visible="true" pixel-width="801" pixel-height="833" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L23" display="code"><EC-CodeEditor id="CodeEditRegion14" visible="true" pixel-width="801" pixel-height="833" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">edfAux := proc(f::polynom, p::integer, k::integer, d::integer)
 	local n, a, g1, b, g2, q;
 	n := degree(f);
 	q := p^k;
@@ -1485,7 +1503,7 @@ factZx(6*x^4 + 5*x^3 + 15*x^2 + 5*x + 4);</EC-CodeEditor>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNigtRiw2Ji1JI21uR0YkNiRRIjJGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUTEmSW52aXNpYmxlVGltZXM7RidGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnL0Y3USdpdGFsaWNGJ0YyLyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y2LUY6Ni1RIitGJ0Y2Rj1GQEZCRkRGRkZIRkovRk1RLDAuMjIyMjIyMmVtRicvRlBGXm9GVEZqbi1GMzYkUSI0RidGNkY2LUY6Ni1RIixGJ0Y2Rj0vRkFGWkZCRkRGRkZIRkpGTC9GUFEsMC4zMzMzMzMzZW1GJy1GLDYoLUYsNiYtRjM2JFEiM0YnRjZGOUZRRjZGam5GVEZqbi1GMzYkUSIxRidGNkY2LyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0Y/RjZGNi8lJW9wZW5HUSJ8ZnJGJy8lJmNsb3NlR1EifGhyRic=">PCQsKCokSSJ4RzYiIiIjRidGJSIiIiIiJUYoLChGJCIiJEYlRihGKEYo</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNigtRiw2Ji1JI21uR0YkNiRRIjJGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUTEmSW52aXNpYmxlVGltZXM7RidGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnL0Y3USdpdGFsaWNGJ0YyLyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y2LUY6Ni1RIitGJ0Y2Rj1GQEZCRkRGRkZIRkovRk1RLDAuMjIyMjIyMmVtRicvRlBGXm9GVEZqbi1GMzYkUSI0RidGNkY2LUY6Ni1RIixGJ0Y2Rj0vRkFGWkZCRkRGRkZIRkpGTC9GUFEsMC4zMzMzMzMzZW1GJy1GLDYoLUYsNiYtRjM2JFEiM0YnRjZGOUZRRjZGam5GVEZqbi1GMzYkUSIxRidGNkY2LyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0Y/RjZGNi8lJW9wZW5HUSJ8ZnJGJy8lJmNsb3NlR1EifGhyRic=">PCQsKComIiIjIiIiKUkieEc2IkYlRiZGJkYoRiYiIiVGJiwoKiYiIiRGJkYnRiZGJkYoRiZGJkYm</Equation></Text-field>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L143" drawlabel="true">
 <Input>
@@ -1502,7 +1520,7 @@ factZx(6*x^4 + 5*x^3 + 15*x^2 + 5*x + 4);</EC-CodeEditor>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L17" drawlabel="true">
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L151" drawlabel="true">
 <Input>
 <Text-field style="Text" layout="Normal"><Equation executable="false" style="Text" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYuLUkjbW5HRiQ2JVEkMTAuRicvJSVzaXplR1EjMTZGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYuUSJ+RidGL0YyLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y7LyUpc3RyZXRjaHlHRjsvJSpzeW1tZXRyaWNHRjsvJShsYXJnZW9wR0Y7LyUubW92YWJsZWxpbWl0c0dGOy8lJ2FjY2VudEdGOy8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRkotSSNtaUdGJDYmUSpBbGdvcml0bW9GJ0YvLyUnaXRhbGljR0Y7RjJGNS1GTjYmUSNkZUYnRi9GUUYyRjUtRk42JlErcHJpbWFsaWRhZEYnRi9GUUYyRjVGU0Y1LUZONiZRJEFLU0YnRi9GUUYyRjI=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYuLUkjbW5HRiQ2JVEkMTAuRicvJSVzaXplR1EjMTZGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYuUSJ+RidGL0YyLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y7LyUpc3RyZXRjaHlHRjsvJSpzeW1tZXRyaWNHRjsvJShsYXJnZW9wR0Y7LyUubW92YWJsZWxpbWl0c0dGOy8lJ2FjY2VudEdGOy8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRkotSSNtaUdGJDYmUSpBbGdvcml0bW9GJ0YvLyUnaXRhbGljR0Y7RjJGNS1GTjYmUSNkZUYnRi9GUUYyRjUtRk42JlErcHJpbWFsaWRhZEYnRi9GUUYyRjVGU0Y1LUZONiZRJEFLU0YnRi9GUUYyRjI=</Equation></Text-field>
 </Input>
@@ -1656,12 +1674,12 @@ od;</EC-CodeEditor>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L20" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
 </Input>
 </Group></Presentation-Block><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L23" drawlabel="true">
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L152" drawlabel="true">
 <Input>
-<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
 </Input>
 </Group></Presentation-Block>
 </Worksheet>
