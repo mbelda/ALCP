@@ -801,7 +801,7 @@ mcd := mcdDFU(f, g, p);
 
 </Font><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY2LUkjbWlHRiQ2I1EhRictSSNtbkdGJDYlUSM0LkYnLyUlc2l6ZUdRIzE2RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LlEifkYnRjNGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUYsNiZRKEludmVyc29GJ0YzLyUnaXRhbGljR0Y/RjZGOS1GLDYmUSNkZUYnRjNGVEY2RjktRiw2JlEjdW5GJ0YzRlRGNkY5LUYsNiZRKWVsZW1lbnRvRidGM0ZURjZGOS1GLDYmUSNlbkYnRjNGVEY2RjlGWUY5LUYsNiZRJ2N1ZXJwb0YnRjNGVEY2RjktRiw2JlEnZmluaXRvRidGM0ZURjYvJStleGVjdXRhYmxlR0Y/RjY=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzY2LUkjbWlHRiQ2I1EhRictSSNtbkdGJDYlUSM0LkYnLyUlc2l6ZUdRIzE2RicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LlEifkYnRjNGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUYsNiZRKEludmVyc29GJ0YzLyUnaXRhbGljR0Y/RjZGOS1GLDYmUSNkZUYnRjNGVEY2RjktRiw2JlEjdW5GJ0YzRlRGNkY5LUYsNiZRKWVsZW1lbnRvRidGM0ZURjZGOS1GLDYmUSNlbkYnRjNGVEY2RjlGWUY5LUYsNiZRJ2N1ZXJwb0YnRjNGVEY2RjktRiw2JlEnZmluaXRvRidGM0ZURjYvJStleGVjdXRhYmxlR0Y/RjY=</Equation><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2I1EhRic=</Equation></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L21" display="code"><EC-CodeEditor id="CodeEditRegion1" visible="true" pixel-width="500" pixel-height="270" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">invCF := proc(p::integer,f::polynom,g::polynom)
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L21" display="code"><EC-CodeEditor id="CodeEditRegion1" visible="true" pixel-width="574" pixel-height="365" code-language="text/maple" autoexpand="true" wrapping="false" code-line-numbers="true">invCF := proc(p::integer,f::polynom,g::polynom)
 	if not isprime(p) then
 		return &quot;Erorr: 'p' ha de ser primo&quot;
 	fi;
@@ -812,9 +812,27 @@ mcd := mcdDFU(f, g, p);
 	return t mod p;
 end proc:
 
-invCF(5,x^3-x+2,x^2);</EC-CodeEditor>
+print(`Consideremos F5[x], f = x^3-x+2 y F125 = F5[x]/&lt;f&gt;`);
+print(`Sea alpha = x mod f. Buscamos el inverso de alpha^2 en F125:`);
+eval(invCF(5,x^3-x+2,x^2), x=alpha);
+
+print(`Lo comprobamos calculando el inverso mediante el paquete GF:`);
+G125:=GF(5,3,x^3-x+2):
+eval(G125:-ConvertOut(G125:-inverse(G125:-ConvertIn(x^2))),x=alpha);</EC-CodeEditor>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRiM2JkY6LUZENi1RMSZJbnZpc2libGVUaW1lcztGJ0Y+RkdGSkZMRk5GUEZSRlQvRldRJjAuMGVtRicvRlpGW29GMEY+RkMtRjs2JFEiNEYnRj5GPg==">LCgqJClJInhHNiIiIiMiIiJGKComRidGKEYlRihGKCIiJUYo</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SVNDb25zaWRlcmVtb3N+RjVbeF0sfmZ+PX54XjMteCsyfnl+RjEyNX49fkY1W3hdLzxmPkc2Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SWduU2VhfmFscGhhfj1+eH5tb2R+Zi5+QnVzY2Ftb3N+ZWx+aW52ZXJzb35kZX5hbHBoYV4yfmVufkYxMjU6RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUScmIzk0NTtGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW5HRiQ2JFEiMkYnRjcvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRjctSSNtb0dGJDYtUSIrRidGNy8lJmZlbmNlR0Y2LyUqc2VwYXJhdG9yR0Y2LyUpc3RyZXRjaHlHRjYvJSpzeW1tZXRyaWNHRjYvJShsYXJnZW9wR0Y2LyUubW92YWJsZWxpbWl0c0dGNi8lJ2FjY2VudEdGNi8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlUtRiM2JkY6LUZCNi1RMSZJbnZpc2libGVUaW1lcztGJ0Y3RkVGR0ZJRktGTUZPRlEvRlRRJjAuMGVtRicvRldGaG5GMEY3RkEtRjs2JFEiNEYnRjdGNw==">LCgqJClJJmFscGhhRzYiIiIjIiIiRigqJkYnRihGJUYoRigiIiVGKA==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SWduTG9+Y29tcHJvYmFtb3N+Y2FsY3VsYW5kb35lbH5pbnZlcnNvfm1lZGlhbnRlfmVsfnBhcXVldGV+R0Y6RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUScmIzk0NTtGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW5HRiQ2JFEiMkYnRjcvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRjctSSNtb0dGJDYtUSIrRidGNy8lJmZlbmNlR0Y2LyUqc2VwYXJhdG9yR0Y2LyUpc3RyZXRjaHlHRjYvJSpzeW1tZXRyaWNHRjYvJShsYXJnZW9wR0Y2LyUubW92YWJsZWxpbWl0c0dGNi8lJ2FjY2VudEdGNi8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlUtRiM2JkY6LUZCNi1RMSZJbnZpc2libGVUaW1lcztGJ0Y3RkVGR0ZJRktGTUZPRlEvRlRRJjAuMGVtRicvRldGaG5GMEY3RkEtRjs2JFEiNEYnRjdGNw==">LCgqJClJJmFscGhhRzYiIiIjIiIiRigqJkYnRihGJUYoRigiIiVGKA==</Equation></Text-field>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L109" drawlabel="true">
 <Input>
@@ -856,11 +874,11 @@ end proc:
 
 print('________________EJEMPLOS________________');
 p := 2: q:= 16:
-print(`En Z16: 2`);
+print(`En F16: 2`);
 testIrre(2, q);
-print(`En Z16: x`);
+print(`En F16: x`);
 testIrre(x, q);
-print(`En Z16: (x+1)^2`);
+print(`En F16: (x+1)^2`);
 f := (x+1)^2:
 testIrre(f, q);
 print(`En F16: x + r`);
@@ -873,19 +891,19 @@ testIrre(f, q);</EC-CodeEditor>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5aMTY6fjJHNiI=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5GMTY6fjJHNiI=</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5aMTY6fnhHNiI=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpFbn5GMTY6fnhHNiI=</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSxpcnJlZHVjaWJsZUc2Ig==</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STBFbn5aMTY6fih4KzEpXjJHNiI=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STBFbn5GMTY6fih4KzEpXjJHNiI=</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSpyZWR1Y2libGVHNiI=</Equation></Text-field>
@@ -966,13 +984,13 @@ testIrre(f, q);</EC-CodeEditor>
 end proc:
 
 print('________________EJEMPLOS________________');
-print(`En Z5^4: (x+1)^2*(x+3)`);
+print(`En Z5: (x+1)^2*(x+3)`);
 sfd((x+1)^2*(x+3), 5, 1);</EC-CodeEditor>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STdFbn5aNV40On4oeCsxKV4yKih4KzMpRzYi</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STVFbn5aNTp+KHgrMSleMiooeCszKUc2Ig==</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjNGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJy1GWTYkUSIxRidGQi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGRkZCRkIvJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRidGZm4tRiM2Ji1GLDYoLUYsNiZGNEY+Rl5vRkJGZm4tRlk2JFEiMkYnRkJGYW9GZG9GQkZCRmZvRmlvRmFvRmRvRkJGQkZmb0Zpbw==">NyQ3JCwmSSJ4RzYiIiIiIiIkRidGJzckLCZGJUYnRidGJyIiIw==</Equation></Text-field>
@@ -1017,7 +1035,7 @@ local result, h, i, g, f, q;
 end proc:
 
 print('________________EJEMPLOS________________');
-print(`En Z5^4: x^4 + 3x^3 + 4x^2 + 3`);
+print(`En F5^4: x^4 + 3x^3 + 4x^2 + 3`);
 ddf(x^4+3*x^3+4*x^2+3, 5, 4);</EC-CodeEditor>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
@@ -1179,7 +1197,7 @@ polyFact := proc(f::polynom, p::integer, expo::integer)
 end proc:
 
 print('________________EJEMPLOS________________');
-print(`En Z5^4: x^4 + 3x^3 + 4x^2 + 3`);
+print(`En F5^4: x^4 + 3x^3 + 4x^2 + 3`);
 f := x^4+3*x^3+4*x^2+3:
 p := 5:
 polyFact(f, p, 4);
@@ -1187,22 +1205,22 @@ polyFact(f, p, 4);
 print(`En Z7: (x+3)*(x-1)`);
 f := (x+3)*(x-1):
 p := 7:
-polyFact(f, p, 1, 1 );
+polyFact(f, p, 1);
 #(`mod`(Factors(f), p))[2];
 print(`En Z3: (x+5)*(x-2)`);
 f := (x+5)*(x-2):
 p := 3:
-polyFact(f, p, 1, 1 );
+polyFact(f, p, 1);
 #(`mod`(Factors(f), p))[2];
 </EC-CodeEditor>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5GNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjFGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJ0ZYLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0ZGRkJGQi8lJW9wZW5HUSJbRicvJSZjbG9zZUdRIl1GJ0Zmbi1GIzYmLUYsNigtRiw2Ki1GLDYkLUklbXN1cEdGJDYlRjQtRlk2JFEiM0YnRkIvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRkJGPi1GLDYmLUZZNiRRIjJGJ0ZCLUY/Ni1RMSZJbnZpc2libGVUaW1lcztGJ0ZCRkRGR0ZJRktGTUZPRlFGam4vRldGW28tRmJwNiVGNEZccUZncEZCRj4tRiw2JkZccUZfcUY0RkJGPkZkcEZCRmZuRlhGXm9GYW9GQkZCRmNvRmZvRl5vRmFvRkJGQkZjb0Zmbw==">NyQ3JCwmSSJ4RzYiIiIiRidGJ0YnNyQsKiokKUYlIiIkRidGJyomIiIjRicpRiVGLkYnRicqJkYuRidGJUYnRidGLEYnRic=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYjNiYtRiw2KC1GLDYmLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIitGJy9GPFEnbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkYvJSlzdHJldGNoeUdGRi8lKnN5bW1ldHJpY0dGRi8lKGxhcmdlb3BHRkYvJS5tb3ZhYmxlbGltaXRzR0ZGLyUnYWNjZW50R0ZGLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGVS1JI21uR0YkNiRRIjFGJ0ZCRkItRj82LVEiLEYnRkJGRC9GSEY6RklGS0ZNRk9GUS9GVFEmMC4wZW1GJy9GV1EsMC4zMzMzMzMzZW1GJ0ZYLyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0ZGRkJGQi8lJW9wZW5HUSJbRicvJSZjbG9zZUdRIl1GJ0Zmbi1GIzYmLUYsNigtRiw2Ki1GLDYkLUklbXN1cEdGJDYlRjQtRlk2JFEiM0YnRkIvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRkJGPi1GLDYmLUZZNiRRIjJGJ0ZCLUY/Ni1RMSZJbnZpc2libGVUaW1lcztGJ0ZCRkRGR0ZJRktGTUZPRlFGam4vRldGW28tRmJwNiVGNEZccUZncEZCRj4tRiw2JkZccUZfcUY0RkJGPkZkcEZCRmZuRlhGXm9GYW9GQkZCRmNvRmZvRl5vRmFvRkJGQkZjb0Zmbw==">NyQ3JCwmSSJ4RzYiIiIiRidGJ0YnNyQsKiokRiUiIiRGJyokRiUiIiNGLUYlRi1GK0YnRic=</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STNFbn5aNzp+KHgrMykqKHgtMSlHNiI=</Equation></Text-field>
@@ -1405,59 +1423,75 @@ berlekamp := proc(p::integer,k::integer,f::polynom) # El polinomio ha de ser lib
 	
 end proc:
 
-print(`Ejemplo en F5[x]: x^9 + x`);
+print(`Ejemplo en F5[x]: factorizamos x^9 + x`);
+print(`Haciendo uso de la funci\303\263n Factor de Maple:`);
 Factor(x^9+x) mod 5;
+print(`Mediante nuestra implementaci\303\263n:`);
 for i from 1 to 10 do
 	berlekamp(5, 1,x^9+x);
 od;
 
-print(`\134nEjemplo en F4[x]: x^2 + x + 1`);
+print(`\134nEjemplo en F4[x] = Z2[x]/&lt;x^2+x+1&gt;: si alpha = x mod f, factorizamos x^5+alpha`);
 alias(alpha = RootOf(x^2 + x + 1)):
+print(`Haciendo uso de la funci\303\263n Factor de Maple:`);
 Factor(x^5+alpha, alpha) mod 2;
+print(`Mediante nuestra implementaci\303\263n:`);
 for i from 1 to 10 do
 	berlekamp(2, 2,x^5+alpha);
 od;</EC-CodeEditor>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">STpFamVtcGxvfmVufkY1W3hdOn54Xjl+K354RzYi</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUdFamVtcGxvfmVufkY1W3hdOn5mYWN0b3JpemFtb3N+eF45fit+eEc2Ig==</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RMSZJbnZpc2libGVUaW1lcztGJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGTC1JKG1mZW5jZWRHRiQ2JC1GIzYmLUYjNiQtSSVtc3VwR0YkNiVGKy1JI21uR0YkNiRRIjRGJ0Y5LyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y5LUY2Ni1RIitGJ0Y5RjtGPkZARkJGREZGRkgvRktRLDAuMjIyMjIyMmVtRicvRk5GXm8tRlo2JFEiMkYnRjlGOUY5RjUtRlA2JC1GIzYmRlRGam4tRlo2JFEiM0YnRjlGOUY5Rjk=">KihJInhHNiIiIiIsJiokRiMiIiVGJSIiI0YlRiUsJkYnRiUiIiRGJUYl</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SU1IYWNpZW5kb351c29+ZGV+bGF+ZnVuY2l8Xnd8XnZufkZhY3Rvcn5kZX5NYXBsZTpHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSJ4RzYi</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RMSZJbnZpc2libGVUaW1lcztGJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGTC1JKG1mZW5jZWRHRiQ2JC1GIzYmLUYjNiQtSSVtc3VwR0YkNiVGKy1JI21uR0YkNiRRIjRGJ0Y5LyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y5LUY2Ni1RIitGJ0Y5RjtGPkZARkJGREZGRkgvRktRLDAuMjIyMjIyMmVtRicvRk5GXm8tRlo2JFEiMkYnRjlGOUY5RjUtRlA2JC1GIzYmRlRGam4tRlo2JFEiM0YnRjlGOUY5Rjk=">KihJInhHNiIiIiIsJiokKUYjIiIlRiVGJSIiI0YlRiUsJkYnRiUiIiRGJUYl</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNEYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiM0YnRj5GPg==">LCYqJEkieEc2IiIiJSIiIiIiJEYn</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSJ4RzYi</Equation></Text-field>
-</Output>
-<Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNEYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiMkYnRj5GPg==">LCYqJEkieEc2IiIiJSIiIiIiI0Yn</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUJNZWRpYW50ZX5udWVzdHJhfmltcGxlbWVudGFjaXxed3xedm46RzYi</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSJ4RzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNEYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiM0YnRj5GPg==">LCYqJEkieEc2IiIiJSIiIiIiJEYn</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNEYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiM0YnRj5GPg==">LCYqJClJInhHNiIiIiUiIiJGKCIiJEYo</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNUYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRiM2Ji1GOzYkUSIzRidGPi1GRDYtUTEmSW52aXNpYmxlVGltZXM7RidGPkZHRkpGTEZORlBGUkZUL0ZXUSYwLjBlbUYnL0ZaRl5vRjBGPkY+">LCYqJEkieEc2IiIiJiIiIkYkIiIk</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSJ4RzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNEYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiM0YnRj5GPg==">LCYqJEkieEc2IiIiJSIiIiIiJEYn</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNEYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiMkYnRj5GPg==">LCYqJClJInhHNiIiIiUiIiJGKCIiI0Yo</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNEYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiMkYnRj5GPg==">LCYqJEkieEc2IiIiJSIiIiIiI0Yn</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SSJ4RzYi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNEYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiM0YnRj5GPg==">LCYqJClJInhHNiIiIiUiIiJGKCIiJEYo</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNUYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRiM2Ji1GOzYkUSIzRidGPi1GRDYtUTEmSW52aXNpYmxlVGltZXM7RidGPkZHRkpGTEZORlBGUkZUL0ZXUSYwLjBlbUYnL0ZaRl5vRjBGPkY+">LCYqJClJInhHNiIiIiYiIiJGKComIiIkRihGJUYoRig=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNEYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiM0YnRj5GPg==">LCYqJClJInhHNiIiIiUiIiJGKCIiJEYo</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiNEYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjs2JFEiMkYnRj5GPg==">LCYqJClJInhHNiIiIiUiIiJGKCIiI0Yo</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">UShmYWlsdXJlNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST98K0VqZW1wbG9+ZW5+RjRbeF06fnheMn4rfnh+K34xRzYi</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SWpvfCtFamVtcGxvfmVufkY0W3hdfj1+WjJbeF0vPHheMit4KzE+On5zaX5hbHBoYX49fnh+bW9kfmYsfmZhY3Rvcml6YW1vc354XjUrYWxwaGFHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUkobWZlbmNlZEdGJDYkLUYjNigtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnL0Y4USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQi8lKXN0cmV0Y2h5R0ZCLyUqc3ltbWV0cmljR0ZCLyUobGFyZ2VvcEdGQi8lLm1vdmFibGVsaW1pdHNHRkIvJSdhY2NlbnRHRkIvJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZRLUYxNiVRJyYjOTQ1O0YnL0Y1RkJGPkY6LUkjbW5HRiQ2JFEiMUYnRj5GPkY+LUY7Ni1RMSZJbnZpc2libGVUaW1lcztGJ0Y+RkBGQ0ZFRkdGSUZLRk0vRlBRJjAuMGVtRicvRlNGam4tRiw2JC1GIzYoLUYjNiZGVEZmbkYwRj5GOi1GIzYkLUklbXN1cEdGJDYlRjAtRlk2JFEiMkYnRj4vJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRj5GOkZURj5GPkZmbi1GLDYkLUYjNihGYm9GOkZURjpGMEY+Rj5GPg==">KigsKEkieEc2IiIiIkkmYWxwaGFHRiVGJkYmRiZGJiwoKiZGJ0YmRiRGJkYmKiRGJCIiI0YmRidGJkYmLChGKkYmRidGJkYkRiZGJg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SU1IYWNpZW5kb351c29+ZGV+bGF+ZnVuY2l8Xnd8XnZufkZhY3Rvcn5kZX5NYXBsZTpHNiI=</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUkobWZlbmNlZEdGJDYkLUYjNigtRiM2Ji1JI21pR0YkNiVRJyYjOTQ1O0YnLyUnaXRhbGljR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUTEmSW52aXNpYmxlVGltZXM7RidGOS8lJmZlbmNlR0Y4LyUqc2VwYXJhdG9yR0Y4LyUpc3RyZXRjaHlHRjgvJSpzeW1tZXRyaWNHRjgvJShsYXJnZW9wR0Y4LyUubW92YWJsZWxpbWl0c0dGOC8lJ2FjY2VudEdGOC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRlAtRjM2JVEieEYnL0Y3USV0cnVlRicvRjpRJ2l0YWxpY0YnRjktRj02LVEiK0YnRjlGQEZCRkRGRkZIRkpGTC9GT1EsMC4yMjIyMjIyZW1GJy9GUkZobi1GIzYkLUklbXN1cEdGJDYlRlMtSSNtbkdGJDYkUSIyRidGOS8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGOUZaRjJGOUY5RjwtRiw2JC1GIzYoRlNGWkYyRlotRmBvNiRRIjFGJ0Y5RjlGOUY8LUYsNiQtRiM2KEZqbkZaRjJGWkZTRjlGOUY5">KigsKComSSZhbHBoYUc2IiIiIkkieEdGJkYnRicqJClGKCIiI0YnRidGJUYnRicsKEYoRidGJUYnRidGJ0YnLChGKUYnRiVGJ0YoRidGJw==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUJNZWRpYW50ZX5udWVzdHJhfmltcGxlbWVudGFjaXxed3xedm46RzYi</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">UShmYWlsdXJlNiI=</Equation></Text-field>
@@ -1481,7 +1515,7 @@ od;</EC-CodeEditor>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">UShmYWlsdXJlNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjE2JVEnJiM5NDU7RicvRjVGSUY+RkNGMEY+">LCgqJEkieEc2IiIiIyIiIkkmYWxwaGFHRiVGJ0YkRic=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUYjNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y4USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGPi1JI21vR0YkNi1RIitGJ0Y+LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZJLyUpc3RyZXRjaHlHRkkvJSpzeW1tZXRyaWNHRkkvJShsYXJnZW9wR0ZJLyUubW92YWJsZWxpbWl0c0dGSS8lJ2FjY2VudEdGSS8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlgtRjE2JVEnJiM5NDU7RicvRjVGSUY+RkNGMEY+">LCgqJClJInhHNiIiIiMiIiJGKEkmYWxwaGFHRiZGKEYlRig=</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">UShmYWlsdXJlNiI=</Equation></Text-field>
@@ -1649,13 +1683,13 @@ factZx := proc(f::polynom)
 end proc:
 
 print('________________EJEMPLOS________________');
-print(`En Z5^4: x^4 + 3x^3 + 4x^2 + 3`);
+print(`En F5^4: x^4 + 3x^3 + 4x^2 + 3`);
 factZx(6*x^4 + 5*x^3 + 15*x^2 + 5*x + 4);</EC-CodeEditor>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5aNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">ST9Fbn5GNV40On54XjR+K34zeF4zfit+NHheMn4rfjNHNiI=</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYoLUYsNigtRiw2Ji1JI21uR0YkNiRRIjJGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUTEmSW52aXNpYmxlVGltZXM7RidGNi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPy8lKXN0cmV0Y2h5R0Y/LyUqc3ltbWV0cmljR0Y/LyUobGFyZ2VvcEdGPy8lLm1vdmFibGVsaW1pdHNHRj8vJSdhY2NlbnRHRj8vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZOLUklbXN1cEdGJDYlLUkjbWlHRiQ2JVEieEYnLyUnaXRhbGljR1EldHJ1ZUYnL0Y3USdpdGFsaWNGJ0YyLyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y2LUY6Ni1RIitGJ0Y2Rj1GQEZCRkRGRkZIRkovRk1RLDAuMjIyMjIyMmVtRicvRlBGXm9GVEZqbi1GMzYkUSI0RidGNkY2LUY6Ni1RIixGJ0Y2Rj0vRkFGWkZCRkRGRkZIRkpGTC9GUFEsMC4zMzMzMzMzZW1GJy1GLDYoLUYsNiYtRjM2JFEiM0YnRjZGOUZRRjZGam5GVEZqbi1GMzYkUSIxRidGNkY2LyUrZm9yZWdyb3VuZEdRKFswLDAsMF1GJy8lKXJlYWRvbmx5R0Y/RjZGNi8lJW9wZW5HUSJ8ZnJGJy8lJmNsb3NlR1EifGhyRic=">PCQsKComIiIjIiIiKUkieEc2IkYlRiZGJkYoRiYiIiVGJiwoKiYiIiRGJkYnRiZGJkYoRiZGJkYm</Equation></Text-field>
@@ -1851,7 +1885,7 @@ od;</EC-CodeEditor>
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion15" visible="true" pixel-width="701" pixel-height="713" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(Groebner):
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L16" display="code"><EC-CodeEditor id="CodeEditRegion15" visible="true" pixel-width="701" pixel-height="713" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">with(Groebner):
 parejas := proc(G)
 	local res, i, j;
 	res := {};
@@ -1989,28 +2023,28 @@ Groebner[Basis]({x^2, x*y+y^2}, plex(x, y));</EC-CodeEditor>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SU9EaXZpc2lvbjp+eXheMn4rfnh5XjJ+K355XjJ+Y29ufnleMn4tfjF+eX54eS0xRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUkobWZlbmNlZEdGJDYmLUYjNigtRiM2Ji1JI21pR0YkNiVRInhGJy8lJ2l0YWxpY0dRJXRydWVGJy8lLG1hdGh2YXJpYW50R1EnaXRhbGljRictSSNtb0dGJDYtUSIrRicvRjpRJ25vcm1hbEYnLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZELyUpc3RyZXRjaHlHRkQvJSpzeW1tZXRyaWNHRkQvJShsYXJnZW9wR0ZELyUubW92YWJsZWxpbWl0c0dGRC8lJ2FjY2VudEdGRC8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlMtSSNtbkdGJDYkUSIxRidGQEZALUY9Ni1RIixGJ0ZARkIvRkZGOEZHRklGS0ZNRk8vRlJRJjAuMGVtRicvRlVRLDAuMzMzMzMzM2VtRidGMi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGREZARkAvJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRidGWi1GIzYmLUYjNiYtRlc2JFEiMkYnRkAtRj02LVExJkludmlzaWJsZVRpbWVzO0YnRkBGQkZFRkdGSUZLRk1GT0Zobi9GVUZpbkYyRkBGPEZWRkBGXG9GX29GQA==">NiQ3JCwmSSJ4RzYiIiIiRidGJ0YlLCZGJSIiI0YnRic=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUkobWZlbmNlZEdGJDYmLUYjNigtRiM2Ji1JI21pR0YkNiVRInhGJy8lJ2l0YWxpY0dRJXRydWVGJy8lLG1hdGh2YXJpYW50R1EnaXRhbGljRictSSNtb0dGJDYtUSIrRicvRjpRJ25vcm1hbEYnLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0ZELyUpc3RyZXRjaHlHRkQvJSpzeW1tZXRyaWNHRkQvJShsYXJnZW9wR0ZELyUubW92YWJsZWxpbWl0c0dGRC8lJ2FjY2VudEdGRC8lJ2xzcGFjZUdRLDAuMjIyMjIyMmVtRicvJSdyc3BhY2VHRlMtSSNtbkdGJDYkUSIxRidGQEZALUY9Ni1RIixGJ0ZARkIvRkZGOEZHRklGS0ZNRk8vRlJRJjAuMGVtRicvRlVRLDAuMzMzMzMzM2VtRidGMi8lK2ZvcmVncm91bmRHUShbMCwwLDBdRicvJSlyZWFkb25seUdGREZARkAvJSVvcGVuR1EiW0YnLyUmY2xvc2VHUSJdRidGWi1GIzYmLUYjNiYtRlc2JFEiMkYnRkAtRj02LVExJkludmlzaWJsZVRpbWVzO0YnRkBGQkZFRkdGSUZLRk1GT0Zobi9GVUZpbkYyRkBGPEZWRkBGXG9GX29GQA==">NiQ3JCwmSSJ4RzYiIiIiRidGJ0YlLCYqJiIiI0YnRiVGJ0YnRidGJw==</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SUlfX19fX19fX19fX19fX19fRUpFTVBMT1NfX19fX19fX19fX19fX19fRzYi</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYsLUYsNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiM0YnL0Y7USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGQS1JI21vR0YkNi1RIixGJ0ZBLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y5LyUpc3RyZXRjaHlHRkwvJSpzeW1tZXRyaWNHRkwvJShsYXJnZW9wR0ZMLyUubW92YWJsZWxpbWl0c0dGTC8lJ2FjY2VudEdGTC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiQtRjE2JS1GNDYlUSJ5RidGN0Y6LUY+NiRRIjdGJ0ZBRkNGQUZGLUYsNiYtRjE2JUZdby1GPjYkUSI0RidGQUZDLUZHNi1RMSZJbnZpc2libGVUaW1lcztGJ0ZBRkovRk5GTEZPRlFGU0ZVRldGWS9GZ25GZW5GM0ZBRkYtRiw2Jy1GRzYtUSomdW1pbnVzMDtGJ0ZBRkpGXXBGT0ZRRlNGVUZXL0ZaUSwwLjIyMjIyMjJlbUYnL0ZnbkZlcC1GLDYkRmVvRkEtRkc2LVEiK0YnRkFGSkZdcEZPRlFGU0ZVRldGZHBGZnAtRiw2Ji1GMTYlRjMtRj42JFEiMkYnRkFGQ0Zqb0Zdb0ZBRkEvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkxGQUZBLyUlb3BlbkdRInxmckYnLyUmY2xvc2VHUSJ8aHJGJw==">PCYqJEkieEc2IiIiJCokSSJ5R0YlIiIoKiZGKCIiJUYkIiIiLCYqJEYoRishIiIqJkYkIiIjRihGLEYs</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYsLUYsNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiM0YnL0Y7USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGQS1JI21vR0YkNi1RIixGJ0ZBLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y5LyUpc3RyZXRjaHlHRkwvJSpzeW1tZXRyaWNHRkwvJShsYXJnZW9wR0ZMLyUubW92YWJsZWxpbWl0c0dGTC8lJ2FjY2VudEdGTC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiQtRjE2JS1GNDYlUSJ5RidGN0Y6LUY+NiRRIjdGJ0ZBRkNGQUZGLUYsNiYtRjE2JUZdby1GPjYkUSI0RidGQUZDLUZHNi1RMSZJbnZpc2libGVUaW1lcztGJ0ZBRkovRk5GTEZPRlFGU0ZVRldGWS9GZ25GZW5GM0ZBRkYtRiw2Jy1GRzYtUSomdW1pbnVzMDtGJ0ZBRkpGXXBGT0ZRRlNGVUZXL0ZaUSwwLjIyMjIyMjJlbUYnL0ZnbkZlcC1GLDYkRmVvRkEtRkc2LVEiK0YnRkFGSkZdcEZPRlFGU0ZVRldGZHBGZnAtRiw2Ji1GMTYlRjMtRj42JFEiMkYnRkFGQ0Zqb0Zdb0ZBRkEvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkxGQUZBLyUlb3BlbkdRInxmckYnLyUmY2xvc2VHUSJ8aHJGJw==">PCYqJClJInhHNiIiIiQiIiIqJClJInlHRiYiIihGKComKUYrIiIlRihGJUYoLCYqJEYuRighIiIqJilGJSIiI0YoRitGKEYo</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SS1Db21wcm9iYW1vczpHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYsLUYsNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ5RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiN0YnL0Y7USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGQS1JI21vR0YkNi1RIixGJ0ZBLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y5LyUpc3RyZXRjaHlHRkwvJSpzeW1tZXRyaWNHRkwvJShsYXJnZW9wR0ZMLyUubW92YWJsZWxpbWl0c0dGTC8lJ2FjY2VudEdGTC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiYtRjE2JUYzLUY+NiRRIjRGJ0ZBRkMtRkc2LVExJkludmlzaWJsZVRpbWVzO0YnRkFGSi9GTkZMRk9GUUZTRlVGV0ZZL0ZnbkZlbi1GNDYlUSJ4RidGN0Y6RkFGRi1GLDYnLUZHNi1RKiZ1bWludXMwO0YnRkFGSkZjb0ZPRlFGU0ZVRlcvRlpRLDAuMjIyMjIyMmVtRicvRmduRl5wLUYsNiRGW29GQS1GRzYtUSIrRidGQUZKRmNvRk9GUUZTRlVGV0ZdcEZfcC1GLDYmLUYxNiVGZW8tRj42JFEiMkYnRkFGQ0Zgb0YzRkFGQUZGLUYsNiQtRjE2JUZlby1GPjYkUSIzRidGQUZDRkEvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkxGQUZBLyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn">NyYqJEkieUc2IiIiKComRiQiIiVJInhHRiUiIiIsJiokRiRGKCEiIiomRikiIiNGJEYqRioqJEYpIiIk</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYsLUYsNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ5RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiN0YnL0Y7USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGQS1JI21vR0YkNi1RIixGJ0ZBLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y5LyUpc3RyZXRjaHlHRkwvJSpzeW1tZXRyaWNHRkwvJShsYXJnZW9wR0ZMLyUubW92YWJsZWxpbWl0c0dGTC8lJ2FjY2VudEdGTC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiYtRjE2JUYzLUY+NiRRIjRGJ0ZBRkMtRkc2LVExJkludmlzaWJsZVRpbWVzO0YnRkFGSi9GTkZMRk9GUUZTRlVGV0ZZL0ZnbkZlbi1GNDYlUSJ4RidGN0Y6RkFGRi1GLDYnLUZHNi1RKiZ1bWludXMwO0YnRkFGSkZjb0ZPRlFGU0ZVRlcvRlpRLDAuMjIyMjIyMmVtRicvRmduRl5wLUYsNiRGW29GQS1GRzYtUSIrRidGQUZKRmNvRk9GUUZTRlVGV0ZdcEZfcC1GLDYmLUYxNiVGZW8tRj42JFEiMkYnRkFGQ0Zgb0YzRkFGQUZGLUYsNiQtRjE2JUZlby1GPjYkUSIzRidGQUZDRkEvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkxGQUZBLyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn">NyYqJClJInlHNiIiIigiIiIqJilGJSIiJUYoSSJ4R0YmRigsJiokRipGKCEiIiomKUYsIiIjRihGJUYoRigqJClGLCIiJEYo</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYqLUYsNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y7USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGQS1JI21vR0YkNi1RIixGJ0ZBLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y5LyUpc3RyZXRjaHlHRkwvJSpzeW1tZXRyaWNHRkwvJShsYXJnZW9wR0ZMLyUubW92YWJsZWxpbWl0c0dGTC8lJ2FjY2VudEdGTC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiQtRjE2JS1GNDYlUSJ5RidGN0Y6LUY+NiRRIjNGJ0ZBRkNGQUZGLUYsNiYtRiw2JkYzLUZHNi1RMSZJbnZpc2libGVUaW1lcztGJ0ZBRkovRk5GTEZPRlFGU0ZVRldGWS9GZ25GZW5GXW9GQS1GRzYtUSIrRidGQUZKRmpvRk9GUUZTRlVGVy9GWlEsMC4yMjIyMjIyZW1GJy9GZ25GYHAtRiw2JC1GMTYlRl1vRj1GQ0ZBRkEvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkxGQUZBLyUlb3BlbkdRInxmckYnLyUmY2xvc2VHUSJ8aHJGJw==">PCUqJEkieEc2IiIiIyokSSJ5R0YlIiIkLCYqJkYkIiIiRihGLEYsKiRGKEYmRiw=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYqLUYsNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ4RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiMkYnL0Y7USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGQS1JI21vR0YkNi1RIixGJ0ZBLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y5LyUpc3RyZXRjaHlHRkwvJSpzeW1tZXRyaWNHRkwvJShsYXJnZW9wR0ZMLyUubW92YWJsZWxpbWl0c0dGTC8lJ2FjY2VudEdGTC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiQtRjE2JS1GNDYlUSJ5RidGN0Y6LUY+NiRRIjNGJ0ZBRkNGQUZGLUYsNiYtRiw2JkYzLUZHNi1RMSZJbnZpc2libGVUaW1lcztGJ0ZBRkovRk5GTEZPRlFGU0ZVRldGWS9GZ25GZW5GXW9GQS1GRzYtUSIrRidGQUZKRmpvRk9GUUZTRlVGVy9GWlEsMC4yMjIyMjIyZW1GJy9GZ25GYHAtRiw2JC1GMTYlRl1vRj1GQ0ZBRkEvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkxGQUZBLyUlb3BlbkdRInxmckYnLyUmY2xvc2VHUSJ8aHJGJw==">PCUqJClJInhHNiIiIiMiIiIqJClJInlHRiYiIiRGKCwmKiZGJUYoRitGKEYoKiQpRitGJ0YoRig=</Equation></Text-field>
 </Output>
 <Output>
 <Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">SS1Db21wcm9iYW1vczpHNiI=</Equation></Text-field>
 </Output>
 <Output>
-<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYqLUYsNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ5RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiM0YnL0Y7USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGQS1JI21vR0YkNi1RIixGJ0ZBLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y5LyUpc3RyZXRjaHlHRkwvJSpzeW1tZXRyaWNHRkwvJShsYXJnZW9wR0ZMLyUubW92YWJsZWxpbWl0c0dGTC8lJ2FjY2VudEdGTC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiYtRiw2Ji1GNDYlUSJ4RidGN0Y6LUZHNi1RMSZJbnZpc2libGVUaW1lcztGJ0ZBRkovRk5GTEZPRlFGU0ZVRldGWS9GZ25GZW5GM0ZBLUZHNi1RIitGJ0ZBRkpGY29GT0ZRRlNGVUZXL0ZaUSwwLjIyMjIyMjJlbUYnL0ZnbkZpby1GLDYkLUYxNiVGMy1GPjYkUSIyRidGQUZDRkFGQUZGLUYsNiQtRjE2JUZdb0ZfcEZDRkEvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkxGQUZBLyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn">NyUqJEkieUc2IiIiJCwmKiZJInhHRiUiIiJGJEYqRioqJEYkIiIjRioqJEYpRiw=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUkobWZlbmNlZEc2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYmLUklbXJvd0dGJDYqLUYsNiQtSSVtc3VwR0YkNiUtSSNtaUdGJDYlUSJ5RicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW5HRiQ2JFEiM0YnL0Y7USdub3JtYWxGJy8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRidGQS1JI21vR0YkNi1RIixGJ0ZBLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y5LyUpc3RyZXRjaHlHRkwvJSpzeW1tZXRyaWNHRkwvJShsYXJnZW9wR0ZMLyUubW92YWJsZWxpbWl0c0dGTC8lJ2FjY2VudEdGTC8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHUSwwLjMzMzMzMzNlbUYnLUYsNiYtRiw2Ji1GNDYlUSJ4RidGN0Y6LUZHNi1RMSZJbnZpc2libGVUaW1lcztGJ0ZBRkovRk5GTEZPRlFGU0ZVRldGWS9GZ25GZW5GM0ZBLUZHNi1RIitGJ0ZBRkpGY29GT0ZRRlNGVUZXL0ZaUSwwLjIyMjIyMjJlbUYnL0ZnbkZpby1GLDYkLUYxNiVGMy1GPjYkUSIyRidGQUZDRkFGQUZGLUYsNiQtRjE2JUZdb0ZfcEZDRkEvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRkxGQUZBLyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYn">NyUqJClJInlHNiIiIiQiIiIsJiomSSJ4R0YmRihGJUYoRigqJClGJSIiI0YoRigqJClGK0YuRig=</Equation></Text-field>
 </Output></CodeEditor-ExecGroup></Presentation-Block><Presentation-Block>
 <Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L163" drawlabel="true">
 <Input>
@@ -2031,7 +2065,7 @@ Groebner[Basis]({x^2, x*y+y^2}, plex(x, y));</EC-CodeEditor>
 <Input>
 <Text-field style="Text" layout="Normal"></Text-field>
 </Input>
-</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" display="code"><EC-CodeEditor id="CodeEditRegion16" visible="true" pixel-width="538" pixel-height="646" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">restart;
+</Group></Presentation-Block><Presentation-Block><CodeEditor-ExecGroup view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L18" display="code"><EC-CodeEditor id="CodeEditRegion16" visible="true" pixel-width="538" pixel-height="646" code-language="text/maple" autoexpand="false" wrapping="false" code-line-numbers="true">restart;
 MRTest := proc(n::integer, k::integer)
 	local s,q, a,b,i,j,seguir;
 	q:= n - 1;
